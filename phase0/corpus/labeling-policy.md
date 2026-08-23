@@ -14,6 +14,12 @@ This policy separates post-level extraction from canonical-event grouping. It pr
 
 ## Counting rules
 
+### Event series versus canonical event
+
+An event series is an umbrella grouping, not automatically a public event. Create separate canonical events when a user makes a separate attendance decision, including events on different dates or programs with distinct registration paths. Connect those events through `event_series_group` metadata rather than merging them.
+
+Two tracks on the same date and at the same venue remain separate events when they have distinct programs and registration paths. Conversely, speaker sessions or agenda blocks under one registration and attendance decision remain parts of one canonical event.
+
 ### Several posts for one event
 
 Group posts under one `canonical_event_group` when they share the same real-world event identity. A changed speaker or session subtitle does not create a new canonical event by itself.

@@ -1,0 +1,8 @@
+event_series_group,event_series_name,canonical_event_group,post_id,relationship,label_status,notes
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,,GDG-011,SERIES_TEASER,caption_only,"No event candidate: dates and registration are intentionally absent"
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,,GDG-012,SERIES_REGISTRATION_OVERVIEW,needs_review,"Overview compresses the two August 1 tracks"
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,,GDG-013,SERIES_SCHEDULE,caption_only,"Known multi-event source"
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,GDG-EXTENDED-SERIES-2026-07-22,,CONTAINS_EVENT,caption_only,
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,GDG-EXTENDED-SERIES-2026-07-24,,CONTAINS_EVENT,caption_only,
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,GDG-CLOUD-NEXT-KDD-2026-08-01,,CONTAINS_EVENT,caption_only,
+GDG-EXTENDED-SERIES-2026,Extended Series Jakarta 2026,GDG-IO-EXTENDED-JAKARTA-2026-08-01,,CONTAINS_EVENT,caption_only,
