@@ -44,6 +44,10 @@ Return separate candidates when a post advertises independently attendable progr
 
 Do not force a gold label. Mark the row `needs_review`, record competing interpretations, and ask the product owner to adjudicate the specific case.
 
+## Relevance rule
+
+`post_role` describes what the source post represents before product filtering. `gold_event_count` describes the candidates expected after the RFC technology and Jabodetabek relevance rules. A real event outside Jabodetabek may therefore be labeled `STANDALONE_EVENT` with `gold_event_count=0`; this is an intentional negative relevance case, not contradictory data.
+
 ## Evaluation boundary
 
 The RFC Phase 0 quality gate evaluates per-post extraction, including known multi-event cases. Cross-post canonical grouping is recorded as an additional corpus dimension so that later deduplication and moderation work can be tested without losing this pilot evidence.
