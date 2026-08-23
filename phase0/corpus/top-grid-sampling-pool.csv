@@ -1,0 +1,31 @@
+source_account,grid_rank,permalink,shortcode,permalink_type,selection_status,selection_notes
+garudaspark,1,https://www.instagram.com/p/DWRRnsCj44i/,DWRRnsCj44i,POST,admitted_to_corpus,"Pinned post; partnership call; expected zero event candidates"
+garudaspark,2,https://www.instagram.com/p/DWRRgs1D1SF/,DWRRgs1D1SF,POST,admitted_to_corpus,"Pinned post; organization introduction; expected zero event candidates"
+garudaspark,3,https://www.instagram.com/p/DWRRVtfDzr5/,DWRRVtfDzr5,POST,admitted_to_corpus,"Pinned post; organization origin story; expected zero event candidates"
+garudaspark,4,https://www.instagram.com/p/DcT9GDTC_li/,DcT9GDTC_li,POST,admitted_to_corpus,"Bandung event; negative Jabodetabek relevance case"
+garudaspark,5,https://www.instagram.com/p/DcTP8qOmVsk/,DcTP8qOmVsk,POST,admitted_to_corpus,"Bali Tech Week pre-event recap; expected zero upcoming candidates"
+garudaspark,6,https://www.instagram.com/p/DcTMGgnJGcf/,DcTMGgnJGcf,POST,admitted_to_corpus,"Positive Jakarta event case"
+garudaspark,7,https://www.instagram.com/p/DcTAiO4CURF/,DcTAiO4CURF,POST,admitted_to_corpus,"Bandung event; negative Jabodetabek relevance case"
+garudaspark,8,https://www.instagram.com/p/DcSpCfAPWnv/,DcSpCfAPWnv,POST,admitted_to_corpus,"Positive Jakarta event with missing date in caption; slide review required"
+garudaspark,9,https://www.instagram.com/p/DcQuo9zHRhm/,DcQuo9zHRhm,POST,admitted_to_corpus,"Surabaya event; negative Jabodetabek relevance case"
+garudaspark,10,https://www.instagram.com/p/DcQnPe4CfpJ/,DcQnPe4CfpJ,POST,admitted_to_corpus,"Bandung event; negative Jabodetabek relevance case"
+indonesiadesignresearch,1,https://www.instagram.com/p/DcQsgYapEVU/,DcQsgYapEVU,POST,pending_caption_review,"Grid order includes pinned posts"
+indonesiadesignresearch,2,https://www.instagram.com/p/DcGfVkjiV-V/,DcGfVkjiV-V,POST,pending_caption_review,"Grid order includes pinned posts"
+indonesiadesignresearch,3,https://www.instagram.com/p/Da4Wsy2CRpn/,Da4Wsy2CRpn,POST,pending_caption_review,"Grid order includes pinned posts"
+indonesiadesignresearch,4,https://www.instagram.com/p/Da22Q6uiS7E/,Da22Q6uiS7E,POST,pending_caption_review,
+indonesiadesignresearch,5,https://www.instagram.com/reel/DYy4qwvJsA4/,DYy4qwvJsA4,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
+indonesiadesignresearch,6,https://www.instagram.com/p/DYEYHsPDxEG/,DYEYHsPDxEG,POST,pending_caption_review,
+indonesiadesignresearch,7,https://www.instagram.com/p/DX8cDSAiQBn/,DX8cDSAiQBn,POST,pending_caption_review,
+indonesiadesignresearch,8,https://www.instagram.com/reel/DW0P7EYCWax/,DW0P7EYCWax,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
+indonesiadesignresearch,9,https://www.instagram.com/p/DWdY3tbCY7c/,DWdY3tbCY7c,POST,pending_caption_review,
+indonesiadesignresearch,10,https://www.instagram.com/reel/DVnpdjmCZve/,DVnpdjmCZve,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
+lifeatblibli,1,https://www.instagram.com/p/DcVpe9amq8y/,DcVpe9amq8y,POST,pending_caption_review,"Grid order includes pinned posts"
+lifeatblibli,2,https://www.instagram.com/reel/DcODOCGv_Ua/,DcODOCGv_Ua,REEL,out_of_scope_reel,"Grid order includes pinned posts; excluded from default image/carousel evaluation"
+lifeatblibli,3,https://www.instagram.com/p/DcGMt3VGs30/,DcGMt3VGs30,POST,pending_caption_review,"Grid order includes pinned posts"
+lifeatblibli,4,https://www.instagram.com/reel/DcBLUBjuWbT/,DcBLUBjuWbT,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
+lifeatblibli,5,https://www.instagram.com/p/Db77-aBTxAQ/,Db77-aBTxAQ,POST,pending_caption_review,
+lifeatblibli,6,https://www.instagram.com/reel/Db8BCy-s8uH/,Db8BCy-s8uH,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
+lifeatblibli,7,https://www.instagram.com/reel/Db21L8gMlGL/,Db21L8gMlGL,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
+lifeatblibli,8,https://www.instagram.com/p/DbxNfzoAdAQ/,DbxNfzoAdAQ,POST,pending_caption_review,
+lifeatblibli,9,https://www.instagram.com/p/DbvHRJdGkTJ/,DbvHRJdGkTJ,POST,pending_caption_review,
+lifeatblibli,10,https://www.instagram.com/p/DbqCSHxGqm6/,DbqCSHxGqm6,POST,pending_caption_review,
