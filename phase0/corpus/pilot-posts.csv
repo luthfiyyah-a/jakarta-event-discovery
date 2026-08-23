@@ -1,0 +1,22 @@
+post_id,source_account,permalink,shortcode,batch,inspection_status,expected_slide_count,post_role,gold_event_count,canonical_event_group,ambiguity_notes
+AWS-001,awsugid,https://www.instagram.com/p/DTuomwdEq7D/,DTuomwdEq7D,seed-01,caption_inspected,,SESSION_PROMO,1,AWS-REINVENT-RECAP-2026-01-31,"Speaker spotlight; session title is not the canonical event title"
+AWS-002,awsugid,https://www.instagram.com/p/DT0AY7MkmBH/,DT0AY7MkmBH,seed-01,caption_inspected,,SESSION_PROMO,1,AWS-REINVENT-RECAP-2026-01-31,"Speaker spotlight; session title is not the canonical event title"
+AWS-003,awsugid,https://www.instagram.com/p/DT5DQPBEodv/,DT5DQPBEodv,seed-01,caption_inspected,,EVENT_OVERVIEW,1,AWS-REINVENT-RECAP-2026-01-31,
+AWS-004,awsugid,https://www.instagram.com/p/DVNhxEfEh2W/,DVNhxEfEh2W,seed-01,caption_inspected,,STANDALONE_EVENT,1,AWS-KIRO-NIGHT-2026-03-06,
+AWS-005,awsugid,https://www.instagram.com/p/DXWXbvrk3Iz/,DXWXbvrk3Iz,seed-01,caption_inspected,,EVENT_OVERVIEW,1,AWS-MONTHLY-MEETUP-2026-04-30,
+AWS-006,awsugid,https://www.instagram.com/p/DXYVLN5AGdp/,DXYVLN5AGdp,seed-01,caption_inspected,,RECAP_OR_NON_EVENT,0,,"Open-ended call for community speakers; no scheduled event in caption"
+AWS-007,awsugid,https://www.instagram.com/p/DXg35-PGfDf/,DXg35-PGfDf,seed-01,caption_inspected,,SESSION_PROMO,1,AWS-MONTHLY-MEETUP-2026-04-30,"Same registration URL/date/venue as AWS-005"
+AWS-008,awsugid,https://www.instagram.com/p/DXomSMFmbPW/,DXomSMFmbPW,seed-01,caption_inspected,,SESSION_PROMO,1,AWS-MONTHLY-MEETUP-2026-04-30,"Same registration URL/date/venue as AWS-005"
+AWS-009,awsugid,https://www.instagram.com/p/DYgj-BRg97W/,DYgj-BRg97W,seed-01,caption_inspected,,STANDALONE_EVENT,1,AWS-AGORA-VOICE-AI,"Caption says 22 May 2025 while post context and registration slug suggest 2026; do not repair silently"
+AWS-010,awsugid,https://www.instagram.com/p/DauOM_eE6PQ/,DauOM_eE6PQ,seed-01,caption_inspected,,SESSION_PROMO,1,AWS-MONTHLY-MEETUP-2026-07-29,"Same event identity and registration URL as AWS-011"
+AWS-011,awsugid,https://www.instagram.com/p/DawsIh3D2Zd/,DawsIh3D2Zd,seed-01,caption_inspected,,SESSION_PROMO,1,AWS-MONTHLY-MEETUP-2026-07-29,"Same event identity and registration URL as AWS-010"
+GDG-001,gdgjakarta,https://www.instagram.com/p/DbA-MoAvx2W/,DbA-MoAvx2W,seed-01,caption_inspected,,STANDALONE_EVENT,1,GDG-EXTENDED-SERIES-2026-07-22,"Series versus independently attendable session boundary needs product-owner review"
+GDG-002,gdgjakarta,https://www.instagram.com/p/DbIbyiUD1N4/,DbIbyiUD1N4,seed-01,caption_inspected,,STANDALONE_EVENT,1,GDG-EXTENDED-SERIES-2026-07-24,"Series versus independently attendable session boundary needs product-owner review"
+GDG-003,gdgjakarta,https://www.instagram.com/p/DbUPPWaykDD/,DbUPPWaykDD,seed-01,caption_inspected,,SESSION_PROMO,1,GDG-IO-EXTENDED-JAKARTA-2026-08-01,"Speaker/session announcement for the main event"
+GDG-004,gdgjakarta,https://www.instagram.com/p/DbUPoLJy-Qt/,DbUPoLJy-Qt,seed-01,caption_inspected,,SESSION_PROMO,1,GDG-IO-EXTENDED-JAKARTA-2026-08-01,"Speaker/session announcement for the main event"
+GDG-005,gdgjakarta,https://www.instagram.com/p/DbVJEHmgyWj/,DbVJEHmgyWj,seed-01,caption_inspected,,SESSION_PROMO,1,GDG-IO-EXTENDED-JAKARTA-2026-08-01,"Speaker/session announcement for the main event"
+GDG-006,gdgjakarta,https://www.instagram.com/p/DbVJRHSA29u/,DbVJRHSA29u,seed-01,caption_inspected,,SESSION_PROMO,1,GDG-IO-EXTENDED-JAKARTA-2026-08-01,"Speaker/session announcement for the main event"
+GDG-007,gdgjakarta,https://www.instagram.com/p/DbaOdjJkZFc/,DbaOdjJkZFc,seed-01,caption_inspected,,EVENT_OVERVIEW,1,GDG-IO-EXTENDED-JAKARTA-2026-08-01,"Two tracks are agenda parts of one in-person main event"
+GDG-008,gdgjakarta,https://www.instagram.com/p/Dbcu6zRGgLx/,Dbcu6zRGgLx,seed-01,caption_inspected,,EVENT_SUPPORT,0,GDG-IO-EXTENDED-JAKARTA-2026-08-01,"Preparation checklist supports the event but caption lacks event date/location and should not create a new candidate"
+GDG-009,gdgjakarta,https://www.instagram.com/p/DbdbyIkGn-q/,DbdbyIkGn-q,seed-01,caption_inspected,,RECAP_OR_NON_EVENT,0,,"Caption is non-event content; slides still require inspection"
+GDG-010,gdgjakarta,https://www.instagram.com/p/DcKqNFuA9sv/,DcKqNFuA9sv,seed-01,caption_inspected,,STANDALONE_EVENT,1,GDG-GRAB-AI-2026-08-29,"Canonical event title requires slide inspection"

@@ -1,0 +1,19 @@
+candidate_id,post_id,candidate_kind,event_name,start_date,end_date,location,format,evidence_source,evidence_slide_index,label_status,label_notes
+AWS-001-C01,AWS-001,EVENT,AWS re:Invent re:Cap Jakarta,2026-01-31,,"Binus Anggrek Hall, Jakarta",IN_PERSON,caption,,caption_only,"Session title retained as evidence but not used as canonical event name"
+AWS-002-C01,AWS-002,EVENT,AWS re:Invent re:Cap Jakarta,2026-01-31,,"Binus Anggrek Hall, Jakarta",IN_PERSON,caption,,caption_only,"Session title retained as evidence but not used as canonical event name"
+AWS-003-C01,AWS-003,EVENT,AWS re:Invent re:Cap Jakarta,2026-01-31,,"Binus Anggrek Hall, Jakarta",IN_PERSON,caption,,caption_only,
+AWS-004-C01,AWS-004,EVENT,Kiro Night: Buka Puasa Bersama & Learning AWS Kiro,2026-03-06,,AWS Office Jakarta,IN_PERSON,caption,,caption_only,
+AWS-005-C01,AWS-005,EVENT,AWS User Group Jakarta April Monthly Meetup,2026-04-30,,AWS Office Jakarta,IN_PERSON,caption,,caption_only,
+AWS-007-C01,AWS-007,EVENT,AWS User Group Jakarta April Monthly Meetup,2026-04-30,,AWS Office Jakarta,IN_PERSON,caption,,caption_only,"Speaker session: Building with Agent Core"
+AWS-008-C01,AWS-008,EVENT,AWS User Group Jakarta April Monthly Meetup,2026-04-30,,AWS Office Jakarta,IN_PERSON,caption,,caption_only,"Speaker session: Financial Crime Detection in Instant Payment"
+AWS-009-C01,AWS-009,EVENT,Build More Than Customer Engagement Solutions with Voice AI Agents,,,AWS Office Jakarta,IN_PERSON,caption,,needs_review,"Caption explicitly says 22 May 2025; likely-year correction is prohibited without adjudication"
+AWS-010-C01,AWS-010,EVENT,AWS User Group Jakarta x Confluent Monthly Meetup July 2026,2026-07-29,,AWS Jakarta Office,IN_PERSON,caption,,caption_only,"Session: Apache Kafka on AWS"
+AWS-011-C01,AWS-011,EVENT,AWS User Group Jakarta x Confluent Monthly Meetup July 2026,2026-07-29,,AWS Jakarta Office,IN_PERSON,caption,,caption_only,"Session: Secure Code Execution with MicroVM"
+GDG-001-C01,GDG-001,EVENT,Extended Series Jakarta 2026 - Spec-Driven Development with Antigravity CLI,2026-07-22,,GDG Indonesia YouTube Channel,ONLINE,caption,,needs_review,"Confirm whether each dated series session should be a separately discoverable event"
+GDG-002-C01,GDG-002,EVENT,Koding Deep Dive x Google Cloud Next Extended 26 - Vibe-code Application Quality and Security,2026-07-24,,GDG Indonesia YouTube Channel,ONLINE,caption,,needs_review,"Confirm whether each dated series session should be a separately discoverable event"
+GDG-003-C01,GDG-003,EVENT,Google I/O Extended Jakarta 2026,2026-08-01,,"Google Indonesia Office, Jakarta - Floor 45",IN_PERSON,caption,,caption_only,"Session: Having fun with Gemini for Building Embedded Project"
+GDG-004-C01,GDG-004,EVENT,Google I/O Extended Jakarta 2026,2026-08-01,,"Google Indonesia Office, Jakarta - Floor 45",IN_PERSON,caption,,caption_only,"Session: Privacy-First AI Pipelines with the Gemma Ecosystem"
+GDG-005-C01,GDG-005,EVENT,Google I/O Extended Jakarta 2026,2026-08-01,,"Google Indonesia Office, Jakarta - Floor 45",IN_PERSON,caption,,caption_only,"Session: Agentic Workflow for Android Development"
+GDG-006-C01,GDG-006,EVENT,Google I/O Extended Jakarta 2026,2026-08-01,,"Google Indonesia Office, Jakarta - Floor 45",IN_PERSON,caption,,caption_only,"Session: Offline Chat Assistant with Gemma"
+GDG-007-C01,GDG-007,EVENT,Google I/O Extended Jakarta 2026,2026-08-01,,"Google Indonesia Office, Jakarta - Floor 45",IN_PERSON,caption,,caption_only,"Morning and afternoon tracks are parts of one main event"
+GDG-010-C01,GDG-010,EVENT,,2026-08-29,,"Grab Indonesia, South Quarter",IN_PERSON,caption,,needs_review,"Event name must be read from slide; do not promote the opening sentence into a title"

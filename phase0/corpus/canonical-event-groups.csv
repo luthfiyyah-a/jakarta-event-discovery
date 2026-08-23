@@ -1,0 +1,20 @@
+canonical_event_group,canonical_event_name,candidate_id,post_id,relationship,label_status,notes
+AWS-REINVENT-RECAP-2026-01-31,AWS re:Invent re:Cap Jakarta,AWS-001-C01,AWS-001,SESSION_PROMO_FOR,caption_only,
+AWS-REINVENT-RECAP-2026-01-31,AWS re:Invent re:Cap Jakarta,AWS-002-C01,AWS-002,SESSION_PROMO_FOR,caption_only,
+AWS-REINVENT-RECAP-2026-01-31,AWS re:Invent re:Cap Jakarta,AWS-003-C01,AWS-003,OVERVIEW_FOR,caption_only,
+AWS-KIRO-NIGHT-2026-03-06,Kiro Night: Buka Puasa Bersama & Learning AWS Kiro,AWS-004-C01,AWS-004,PRIMARY_SOURCE_FOR,caption_only,
+AWS-MONTHLY-MEETUP-2026-04-30,AWS User Group Jakarta April Monthly Meetup,AWS-005-C01,AWS-005,OVERVIEW_FOR,caption_only,
+AWS-MONTHLY-MEETUP-2026-04-30,AWS User Group Jakarta April Monthly Meetup,AWS-007-C01,AWS-007,SESSION_PROMO_FOR,caption_only,
+AWS-MONTHLY-MEETUP-2026-04-30,AWS User Group Jakarta April Monthly Meetup,AWS-008-C01,AWS-008,SESSION_PROMO_FOR,caption_only,
+AWS-AGORA-VOICE-AI,,AWS-009-C01,AWS-009,PRIMARY_SOURCE_FOR,needs_review,"Date-year conflict"
+AWS-MONTHLY-MEETUP-2026-07-29,AWS User Group Jakarta x Confluent Monthly Meetup July 2026,AWS-010-C01,AWS-010,SESSION_PROMO_FOR,caption_only,
+AWS-MONTHLY-MEETUP-2026-07-29,AWS User Group Jakarta x Confluent Monthly Meetup July 2026,AWS-011-C01,AWS-011,SESSION_PROMO_FOR,caption_only,
+GDG-EXTENDED-SERIES-2026-07-22,,GDG-001-C01,GDG-001,PRIMARY_SOURCE_FOR,needs_review,"Series-session product boundary"
+GDG-EXTENDED-SERIES-2026-07-24,,GDG-002-C01,GDG-002,PRIMARY_SOURCE_FOR,needs_review,"Series-session product boundary"
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-003-C01,GDG-003,SESSION_PROMO_FOR,caption_only,
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-004-C01,GDG-004,SESSION_PROMO_FOR,caption_only,
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-005-C01,GDG-005,SESSION_PROMO_FOR,caption_only,
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-006-C01,GDG-006,SESSION_PROMO_FOR,caption_only,
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-007-C01,GDG-007,OVERVIEW_FOR,caption_only,
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,,GDG-008,SUPPORTING_POST_FOR,needs_review,"No standalone candidate expected from caption"
+GDG-GRAB-AI-2026-08-29,,GDG-010-C01,GDG-010,PRIMARY_SOURCE_FOR,needs_review,"Event title requires slide inspection"

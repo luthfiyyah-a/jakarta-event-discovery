@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+
+# Local credentials and provider responses
+secrets/
+phase0/artifacts/
+phase0/media/
+phase0/raw/
+
+# Java and editor output
+target/
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
