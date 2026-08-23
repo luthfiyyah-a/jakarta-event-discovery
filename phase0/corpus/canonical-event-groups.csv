@@ -9,8 +9,8 @@ AWS-MONTHLY-MEETUP-2026-04-30,AWS User Group Jakarta April Monthly Meetup,AWS-00
 AWS-AGORA-VOICE-AI,,AWS-009-C01,AWS-009,PRIMARY_SOURCE_FOR,needs_review,"Date-year conflict"
 AWS-MONTHLY-MEETUP-2026-07-29,AWS User Group Jakarta x Confluent Monthly Meetup July 2026,AWS-010-C01,AWS-010,SESSION_PROMO_FOR,caption_only,
 AWS-MONTHLY-MEETUP-2026-07-29,AWS User Group Jakarta x Confluent Monthly Meetup July 2026,AWS-011-C01,AWS-011,SESSION_PROMO_FOR,caption_only,
-GDG-EXTENDED-SERIES-2026-07-22,,GDG-001-C01,GDG-001,PRIMARY_SOURCE_FOR,needs_review,"Series-session product boundary"
-GDG-EXTENDED-SERIES-2026-07-24,,GDG-002-C01,GDG-002,PRIMARY_SOURCE_FOR,needs_review,"Series-session product boundary"
+GDG-EXTENDED-SERIES-2026-07-22,Spec-Driven Development with Antigravity CLI,GDG-001-C01,GDG-001,PRIMARY_SOURCE_FOR,caption_only,"Independently attendable dated online event inside the series"
+GDG-EXTENDED-SERIES-2026-07-24,Vibe-code Your App Quality & Security,GDG-002-C01,GDG-002,PRIMARY_SOURCE_FOR,caption_only,"Independently attendable dated online event inside the series"
 GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-003-C01,GDG-003,SESSION_PROMO_FOR,caption_only,
 GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-004-C01,GDG-004,SESSION_PROMO_FOR,caption_only,
 GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-005-C01,GDG-005,SESSION_PROMO_FOR,caption_only,
@@ -18,3 +18,11 @@ GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-006-C01,
 GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-007-C01,GDG-007,OVERVIEW_FOR,caption_only,
 GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,,GDG-008,SUPPORTING_POST_FOR,needs_review,"No standalone candidate expected from caption"
 GDG-GRAB-AI-2026-08-29,,GDG-010-C01,GDG-010,PRIMARY_SOURCE_FOR,needs_review,"Event title requires slide inspection"
+GDG-EXTENDED-SERIES-2026-07-22,Spec-Driven Development with Antigravity CLI,GDG-012-C01,GDG-012,SERIES_OVERVIEW_FOR,needs_review,"Overview omits individual title"
+GDG-EXTENDED-SERIES-2026-07-24,Vibe-code Your App Quality & Security,GDG-012-C02,GDG-012,SERIES_OVERVIEW_FOR,needs_review,"Overview omits individual title"
+GDG-CLOUD-NEXT-KDD-2026-08-01,Cloud Next Extended x Koding Deep Dive Main Event,GDG-012-C03,GDG-012,SERIES_OVERVIEW_FOR,needs_review,"Separate KDD/Cloud Next registration path"
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-012-C04,GDG-012,SERIES_OVERVIEW_FOR,needs_review,"Separate IOX registration path"
+GDG-EXTENDED-SERIES-2026-07-22,Spec-Driven Development with Antigravity CLI,GDG-013-C01,GDG-013,MULTI_EVENT_SOURCE_FOR,caption_only,
+GDG-EXTENDED-SERIES-2026-07-24,Vibe-code Your App Quality & Security,GDG-013-C02,GDG-013,MULTI_EVENT_SOURCE_FOR,caption_only,
+GDG-CLOUD-NEXT-KDD-2026-08-01,Cloud Next Extended x Koding Deep Dive Main Event,GDG-013-C03,GDG-013,MULTI_EVENT_SOURCE_FOR,caption_only,
+GDG-IO-EXTENDED-JAKARTA-2026-08-01,Google I/O Extended Jakarta 2026,GDG-013-C04,GDG-013,MULTI_EVENT_SOURCE_FOR,caption_only,
