@@ -9,23 +9,26 @@ garudaspark,7,https://www.instagram.com/p/DcTAiO4CURF/,DcTAiO4CURF,POST,admitted
 garudaspark,8,https://www.instagram.com/p/DcSpCfAPWnv/,DcSpCfAPWnv,POST,admitted_to_corpus,"Positive Jakarta event with missing date in caption; slide review required"
 garudaspark,9,https://www.instagram.com/p/DcQuo9zHRhm/,DcQuo9zHRhm,POST,admitted_to_corpus,"Surabaya event; negative Jabodetabek relevance case"
 garudaspark,10,https://www.instagram.com/p/DcQnPe4CfpJ/,DcQnPe4CfpJ,POST,admitted_to_corpus,"Bandung event; negative Jabodetabek relevance case"
-indonesiadesignresearch,1,https://www.instagram.com/p/DcQsgYapEVU/,DcQsgYapEVU,POST,pending_caption_review,"Grid order includes pinned posts"
-indonesiadesignresearch,2,https://www.instagram.com/p/DcGfVkjiV-V/,DcGfVkjiV-V,POST,pending_caption_review,"Grid order includes pinned posts"
-indonesiadesignresearch,3,https://www.instagram.com/p/Da4Wsy2CRpn/,Da4Wsy2CRpn,POST,pending_caption_review,"Grid order includes pinned posts"
-indonesiadesignresearch,4,https://www.instagram.com/p/Da22Q6uiS7E/,Da22Q6uiS7E,POST,pending_caption_review,
+indonesiadesignresearch,1,https://www.instagram.com/p/DcQsgYapEVU/,DcQsgYapEVU,POST,admitted_to_corpus,"Grid order includes pinned posts; positive BSD event"
+indonesiadesignresearch,2,https://www.instagram.com/p/DcGfVkjiV-V/,DcGfVkjiV-V,POST,admitted_to_corpus,"Grid order includes pinned posts; positive online event"
+indonesiadesignresearch,3,https://www.instagram.com/p/Da4Wsy2CRpn/,Da4Wsy2CRpn,POST,admitted_to_corpus,"Grid order includes pinned posts; recap negative"
+indonesiadesignresearch,4,https://www.instagram.com/p/Da22Q6uiS7E/,Da22Q6uiS7E,POST,admitted_to_corpus,"Recap negative"
 indonesiadesignresearch,5,https://www.instagram.com/reel/DYy4qwvJsA4/,DYy4qwvJsA4,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
-indonesiadesignresearch,6,https://www.instagram.com/p/DYEYHsPDxEG/,DYEYHsPDxEG,POST,pending_caption_review,
-indonesiadesignresearch,7,https://www.instagram.com/p/DX8cDSAiQBn/,DX8cDSAiQBn,POST,pending_caption_review,
+indonesiadesignresearch,6,https://www.instagram.com/p/DYEYHsPDxEG/,DYEYHsPDxEG,POST,admitted_to_corpus,"Positive BSD event; collaboration post is primarily authored by fusecon.asia"
+indonesiadesignresearch,7,https://www.instagram.com/p/DX8cDSAiQBn/,DX8cDSAiQBn,POST,admitted_to_corpus,"Recap negative"
 indonesiadesignresearch,8,https://www.instagram.com/reel/DW0P7EYCWax/,DW0P7EYCWax,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
-indonesiadesignresearch,9,https://www.instagram.com/p/DWdY3tbCY7c/,DWdY3tbCY7c,POST,pending_caption_review,
+indonesiadesignresearch,9,https://www.instagram.com/p/DWdY3tbCY7c/,DWdY3tbCY7c,POST,admitted_to_corpus,"Positive South Jakarta event"
 indonesiadesignresearch,10,https://www.instagram.com/reel/DVnpdjmCZve/,DVnpdjmCZve,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
-lifeatblibli,1,https://www.instagram.com/p/DcVpe9amq8y/,DcVpe9amq8y,POST,pending_caption_review,"Grid order includes pinned posts"
+lifeatblibli,1,https://www.instagram.com/p/DcVpe9amq8y/,DcVpe9amq8y,POST,admitted_to_corpus,"Grid order includes pinned posts; employer-story negative"
 lifeatblibli,2,https://www.instagram.com/reel/DcODOCGv_Ua/,DcODOCGv_Ua,REEL,out_of_scope_reel,"Grid order includes pinned posts; excluded from default image/carousel evaluation"
-lifeatblibli,3,https://www.instagram.com/p/DcGMt3VGs30/,DcGMt3VGs30,POST,pending_caption_review,"Grid order includes pinned posts"
+lifeatblibli,3,https://www.instagram.com/p/DcGMt3VGs30/,DcGMt3VGs30,POST,admitted_to_corpus,"Grid order includes pinned posts; ESG-story negative"
 lifeatblibli,4,https://www.instagram.com/reel/DcBLUBjuWbT/,DcBLUBjuWbT,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
-lifeatblibli,5,https://www.instagram.com/p/Db77-aBTxAQ/,Db77-aBTxAQ,POST,pending_caption_review,
+lifeatblibli,5,https://www.instagram.com/p/Db77-aBTxAQ/,Db77-aBTxAQ,POST,admitted_to_corpus,"IdeaFest session promo; collaboration post is primarily authored by ideafestid"
 lifeatblibli,6,https://www.instagram.com/reel/Db8BCy-s8uH/,Db8BCy-s8uH,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
 lifeatblibli,7,https://www.instagram.com/reel/Db21L8gMlGL/,Db21L8gMlGL,REEL,out_of_scope_reel,"Retained in sampling pool; excluded from default image/carousel evaluation"
-lifeatblibli,8,https://www.instagram.com/p/DbxNfzoAdAQ/,DbxNfzoAdAQ,POST,pending_caption_review,
-lifeatblibli,9,https://www.instagram.com/p/DbvHRJdGkTJ/,DbvHRJdGkTJ,POST,pending_caption_review,
-lifeatblibli,10,https://www.instagram.com/p/DbqCSHxGqm6/,DbqCSHxGqm6,POST,pending_caption_review,
+lifeatblibli,8,https://www.instagram.com/p/DbxNfzoAdAQ/,DbxNfzoAdAQ,POST,admitted_to_corpus,"Positive BlibliTalk event; exact date requires slide review"
+lifeatblibli,9,https://www.instagram.com/p/DbvHRJdGkTJ/,DbvHRJdGkTJ,POST,admitted_to_corpus,"Sports recap negative"
+lifeatblibli,10,https://www.instagram.com/p/DbqCSHxGqm6/,DbqCSHxGqm6,POST,admitted_to_corpus,"Recruitment campaign outside RFC event relevance"
+indonesiadesignresearch,11,https://www.instagram.com/p/Dca72vVEySj/,Dca72vVEySj,POST,admitted_to_corpus,"Additional current-grid sample selected 2026-08-26 to close 50-post gate; primary author is idproductcon"
+garudaspark,11,https://www.instagram.com/p/DceEgIOMZcO/,DceEgIOMZcO,POST,admitted_to_corpus,"Additional current-grid sample selected 2026-08-26; Batam event outside Jabodetabek"
+garudaspark,12,https://www.instagram.com/p/DcdmFXBTG3G/,DcdmFXBTG3G,POST,admitted_to_corpus,"Additional current-grid sample selected 2026-08-26; collaboration post primarily authored by cempor_disporabdg and outside Jabodetabek"
