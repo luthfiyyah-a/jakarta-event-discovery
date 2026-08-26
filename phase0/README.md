@@ -2,15 +2,19 @@
 
 ## Status
 
-The corpus currently contains 34 inspected posts:
+The corpus currently contains 50 inspected posts across all five pilot accounts:
 
 - 11 from `awsugid`
 - 13 from `gdgjakarta`
-- 10 from `garudaspark`
+- 12 from `garudaspark`
+- 8 from `indonesiadesignresearch`
+- 6 from `lifeatblibli`
 
-The final RFC gate still requires 50 real posts from at least three target accounts. Posts from `garudaspark`, `indonesiadesignresearch`, and `lifeatblibli` remain candidates for the next sampling batch.
+The RFC corpus-size gate of 50 real posts from at least three target accounts is met. All five pilot accounts are represented. This satisfies the sample-size prerequisite only; provider completeness, extraction quality, latency, failure-mode, and cost gates remain open.
 
-An automated top-grid sampling pool contains 30 permalinks from the three remaining pilot accounts. The 10 Garuda Spark posts have been inspected and admitted to the corpus. The remaining pool contains 13 uninspected image/carousel post URLs and 7 Reels. Reels are retained as observed source data but are excluded from the default RFC image/carousel corpus until the product scope explicitly includes video extraction.
+The sampling pool contains the original 30 top-grid permalinks plus three additional image/carousel posts selected on 26 August 2026 to close the RFC sample-size gate. All 26 image/carousel posts in the pool have been inspected and admitted to the corpus. Seven Reels are retained as observed source data but are excluded from the default RFC image/carousel corpus until the product scope explicitly includes video extraction.
+
+Two collaboration-post edge cases resolve to a partner account as the primary Instagram author even though they appeared on a pilot account's profile grid. They remain attributed to the sampled pilot account in `source_account`, with the primary-author mismatch recorded in `ambiguity_notes` so source provenance can be tested explicitly.
 
 ## Corpus files
 
@@ -22,6 +26,8 @@ An automated top-grid sampling pool contains 30 permalinks from the three remain
 - `corpus/labeling-policy.md`: product rules for event, session, and multi-event labeling.
 
 Unknown values remain blank until the original post and all available slides have been inspected. Ambiguous cases are documented rather than forced into a gold label.
+
+Run `powershell -NoProfile -ExecutionPolicy Bypass -File phase0/validate-corpus.ps1` from the repository root to verify the sample-size gate, uniqueness, cross-file references, candidate cardinality, and sampling-pool status. The execution-policy override applies only to that PowerShell process.
 
 ## Budget
 
