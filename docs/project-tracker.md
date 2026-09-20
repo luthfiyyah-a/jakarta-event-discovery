@@ -12,7 +12,7 @@
 | P0-01 Freeze representative corpus | Partial | The repository contains 50 caption-inspected posts across five pilot accounts. All 35 candidate labels remain provisional: 25 `caption_only` and 10 `needs_review`. |
 | P0-02 Select retrieval provider | Complete for Phase 0 | Apify Free Plan selected; profile smoke test returned 10/10 posts and direct-permalink test returned 11/11 ordered carousel slides. Cash spend: USD 0. |
 | P0-03 Define raw-post contract | Complete | `phase0/contracts/raw-post-result.schema.json` plus fixtures and tests. |
-| P0-04 Prove media completeness/idempotency | Partial | One 11-slide carousel passed. Repeated-run stable-ID evidence, additional carousel shapes, and Reel/video behavior remain. |
+| P0-04 Prove media completeness/idempotency | Partial | One 11-slide carousel passed. A local comparison harness now detects stable-ID, status/failure, media-count, order, type, and checksum drift. Live repeated-run evidence, additional carousel shapes, and Reel/video behavior remain. |
 | P0-05 Define extraction contract/prompt | Complete | Versioned schema and multimodal prompt are checked in. |
 | P0-06 Build evaluation harness | Partial | Deterministic fixture runner and tests pass; no live-model adapter exists. Fixture scores are not live quality evidence. |
 | P0-07 Run frozen-corpus baseline | Not started | Requires human-validated gold labels, complete visual inputs, an approved model/provider, acceptance thresholds, and a spending boundary. |
@@ -21,7 +21,7 @@
 ## Repository verification
 
 - Node.js requirement: version 20 or newer.
-- `npm run test:phase0`: 13/13 tests passed on Windows after the cross-platform script fix.
+- `npm run test:phase0`: 20/20 tests passed on Windows, including local retrieval-idempotency coverage.
 - Corpus validator: 50 posts, five accounts, and 35 candidates passed structural checks.
 - The checked-in 50-post corpus remains the source of truth.
 
@@ -57,8 +57,8 @@ The IDR 50,000 figure in [the budget document](../phase0/budget.md) is a histori
 ## Recommended next sequence
 
 1. Review all 50 posts visually and resolve provisional gold labels.
-2. Add local repeat-run/idempotency and failure-classification coverage that does not consume provider credit.
-3. Prepare a provider-neutral live-adapter boundary and metering/redaction tests against fixtures.
+2. Prepare a provider-neutral live-adapter boundary and metering/redaction tests against fixtures.
+3. Obtain approval before capturing live repeated-run retrieval evidence or consuming more provider credit.
 4. Obtain decisions for the multimodal model/provider, acceptance thresholds, and explicit maximum spend.
 5. Run an approved metered 10-post dry run before any full-corpus evaluation.
 6. Run the frozen-corpus baseline, inspect failures, and record coverage, correctness, multi-event recall, latency, and cost.
