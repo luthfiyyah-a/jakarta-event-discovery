@@ -1,6 +1,6 @@
 # Jakarta Event Discovery
 
-Phase-gated implementation of RFC-001 Jakarta Event Discovery Platform.
+Phase-gated implementation of [RFC-001 Jakarta Event Discovery Platform](docs/rfc-001-jakarta-event-discovery.md).
 
 The repository currently contains only the Phase 0 feasibility workspace. It does not yet contain the production Spring Boot application. Production foundation work starts only after the Phase 0 decision is `GO` or an approved `CONDITIONAL GO`.
 
@@ -13,6 +13,14 @@ The repository currently contains only the Phase 0 feasibility workspace. It doe
 - Measure quality, failure modes, and cost before production investment.
 
 See [phase0/README.md](phase0/README.md) for the working conventions and current corpus status.
+
+## Documentation
+
+- [Documentation index](docs/README.md)
+- [RFC-001](docs/rfc-001-jakarta-event-discovery.md): product scope, phase gates, and unresolved decisions.
+- [Project tracker](docs/project-tracker.md): measured progress and current blockers.
+- [Codex CLI handoff](docs/codex-cli-handoff.md): local continuation workflow.
+- [Phase 0 workspace](phase0/README.md): corpus and feasibility artifacts.
 
 ## Security
 

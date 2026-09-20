@@ -4,46 +4,57 @@ This repository is the portable source of truth for continuing development on a 
 
 ## Local setup
 
-Prerequisites: Git, Node.js 20+, and Codex CLI.
+Prerequisites: Git, Node.js 20 or newer, and Codex CLI.
 
 ```bash
 git clone https://github.com/luthfiyyah-a/jakarta-event-discovery.git
 cd jakarta-event-discovery
 git fetch origin
-git switch codex/phase0-handoff
+git switch main
 npm run test:phase0
 codex
 ```
 
-On first launch, sign in using the method offered by Codex. Codex reads the root `AGENTS.md` automatically when started from this repository.
+If work is awaiting review on a feature branch, switch to that named branch instead of `main`. Codex reads the root `AGENTS.md` automatically when started from this repository.
 
-After reviewing this branch, merge its pull request into `main`. For later machines, clone `main` directly instead of switching to the handoff branch.
+## Read order
+
+1. `AGENTS.md`
+2. `docs/rfc-001-jakarta-event-discovery.md`
+3. `docs/project-tracker.md`
+4. `phase0/README.md`
+5. Relevant contracts, fixtures, prompts, tests, and corpus metadata for the selected task
 
 ## First prompt to use locally
 
 ```text
-Read AGENTS.md, docs/project-tracker.md, phase0/README.md, and the Phase 0 corpus metadata. Summarize the current state, verify npm run test:phase0, then propose the smallest next task that advances the live multimodal evaluation without spending money or changing the frozen corpus. Do not implement production application code yet.
+Read AGENTS.md, docs/rfc-001-jakarta-event-discovery.md, docs/project-tracker.md, and phase0/README.md. Summarize the current Phase 0 state, verify npm run test:phase0, then choose the smallest unblocked task that advances the Phase 0 exit criteria without spending money, changing the frozen corpus, or implementing production application code. Stop for product-owner approval before using provider credit or a paid AI model.
 ```
 
 ## What is already available
 
-- A 50-post corpus from five pilot accounts under `phase0/corpus/`.
+- A 50-post caption-inspected corpus from five pilot accounts under `phase0/corpus/`.
 - Provider-neutral raw-post and event-extraction JSON Schemas.
 - Fixtures and contract tests.
 - A deterministic evaluation runner for fixture/self-test use.
 - A versioned multimodal extraction prompt.
-- An Apify source-provider spike record and explicit zero-cash guardrails.
+- Apify source-provider spike evidence and explicit zero-cash guardrails.
+- A cross-platform `npm run test:phase0` command.
 
 ## What is deliberately not committed
 
-- Apify tokens or any other credentials.
+- Apify, Qwen, or other credentials.
 - Raw provider responses and downloaded Instagram media.
 - Temporary CDN URLs and local evaluation reports.
-- The older 10-post spreadsheet, because the repository already contains the newer 50-post corpus.
+- The older 10-post spreadsheet, because the repository contains the newer 50-post corpus.
 
-## Next decision point
+## Current blockers
 
-The next blocker is choosing an approved multimodal model/provider and its spending boundary. Until that decision is made, useful local work includes visual-label review, adapter design against fixtures, idempotency tests, and evaluation-runner improvements that do not call paid services.
+- Human visual review of all 50 posts is incomplete.
+- Retrieval idempotency and representative media-completeness evidence are incomplete.
+- The live multimodal model/provider, acceptance thresholds, and spending boundary are undecided.
+
+Useful local work that does not require spending includes documentation maintenance, fixture-based adapter design, redaction/metering tests, idempotency tests, and evaluation-runner hardening. Do not describe fixture scores as live-model quality evidence.
 
 ## Branch workflow
 
@@ -51,7 +62,7 @@ The next blocker is choosing an approved multimodal model/provider and its spend
 git switch main
 git pull --ff-only
 git switch -c codex/<short-task-name>
-# run tests, inspect git diff, then commit and push
+# run tests, inspect git diff, then commit and push when authorized
 ```
 
-Keep one focused task per branch. Never commit `.env`, downloaded social-media assets, or raw provider payloads.
+Keep one focused task per branch. Never commit `.env`, downloaded social-media assets, raw provider payloads, or temporary CDN URLs.
