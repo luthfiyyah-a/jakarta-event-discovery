@@ -1,0 +1,164 @@
+[
+  {
+    "fixture_id": "single-image-one-event",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "source_post_id": "fixture-single-001",
+      "classification": "event",
+      "candidates": [{
+        "candidate_index": 1,
+        "event_name": "AWS User Group Jakarta Monthly Meetup",
+        "start_date": "2026-07-25",
+        "end_date": null,
+        "start_time": "13:00",
+        "end_time": null,
+        "timezone": "Asia/Jakarta",
+        "format": "offline",
+        "venue": "Example Hall",
+        "city_area": "Jakarta",
+        "region": "DKI Jakarta",
+        "organizer": "AWS User Group Jakarta",
+        "price_text": "Free",
+        "registration_url": "https://example.com/register",
+        "deadline": null,
+        "tech_relevant": true,
+        "jabodetabek_relevant": true,
+        "publication_readiness": "ready",
+        "evidence": [
+          {"field": "event_name", "source": "image", "media_index": 1, "text": "AWS User Group Jakarta Monthly Meetup"},
+          {"field": "start_date", "source": "image", "media_index": 1, "text": "25 July 2026"},
+          {"field": "start_time", "source": "image", "media_index": 1, "text": "13:00 WIB"},
+          {"field": "format", "source": "image", "media_index": 1, "text": "Example Hall, Jakarta"},
+          {"field": "venue", "source": "image", "media_index": 1, "text": "Example Hall"},
+          {"field": "city_area", "source": "image", "media_index": 1, "text": "Jakarta"},
+          {"field": "region", "source": "image", "media_index": 1, "text": "Jakarta"},
+          {"field": "organizer", "source": "caption", "media_index": null, "text": "AWS User Group Jakarta"},
+          {"field": "price_text", "source": "image", "media_index": 1, "text": "Free"},
+          {"field": "registration_url", "source": "caption", "media_index": null, "text": "https://example.com/register"},
+          {"field": "tech_relevant", "source": "caption", "media_index": null, "text": "AWS community meetup"},
+          {"field": "jabodetabek_relevant", "source": "image", "media_index": 1, "text": "Jakarta"}
+        ]
+      }],
+      "warnings": []
+    }
+  },
+  {
+    "fixture_id": "real-carousel-teaser-incomplete",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "source_post_id": "3988589750890691208",
+      "classification": "event",
+      "candidates": [{
+        "candidate_index": 1,
+        "event_name": "DevFest Jakarta 2026",
+        "start_date": null,
+        "end_date": null,
+        "start_time": null,
+        "end_time": null,
+        "timezone": "Asia/Jakarta",
+        "format": "unknown",
+        "venue": null,
+        "city_area": null,
+        "region": null,
+        "organizer": "GDG Jakarta",
+        "price_text": null,
+        "registration_url": null,
+        "deadline": null,
+        "tech_relevant": true,
+        "jabodetabek_relevant": null,
+        "publication_readiness": "insufficient_details",
+        "evidence": [
+          {"field": "event_name", "source": "image", "media_index": 1, "text": "Why you can't miss DevFest Jakarta 2026?"},
+          {"field": "organizer", "source": "image", "media_index": 1, "text": "GDG Jakarta"},
+          {"field": "tech_relevant", "source": "image", "media_index": 3, "text": "build product beyond prototype"}
+        ]
+      }],
+      "warnings": ["The post names an upcoming event but does not state its date, venue, or online/offline format."]
+    }
+  },
+  {
+    "fixture_id": "carousel-two-events",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "source_post_id": "fixture-multi-001",
+      "classification": "event",
+      "candidates": [
+        {
+          "candidate_index": 1,
+          "event_name": "Cloud Study Jam",
+          "start_date": "2026-10-03",
+          "end_date": null,
+          "start_time": null,
+          "end_time": null,
+          "timezone": "Asia/Jakarta",
+          "format": "offline",
+          "venue": "Venue A",
+          "city_area": "Jakarta",
+          "region": "DKI Jakarta",
+          "organizer": null,
+          "price_text": null,
+          "registration_url": null,
+          "deadline": null,
+          "tech_relevant": true,
+          "jabodetabek_relevant": true,
+          "publication_readiness": "ready",
+          "evidence": [
+            {"field": "event_name", "source": "image", "media_index": 2, "text": "Cloud Study Jam"},
+            {"field": "start_date", "source": "image", "media_index": 2, "text": "3 October 2026"},
+            {"field": "format", "source": "image", "media_index": 2, "text": "Venue A, Jakarta"},
+            {"field": "venue", "source": "image", "media_index": 2, "text": "Venue A"},
+            {"field": "city_area", "source": "image", "media_index": 2, "text": "Jakarta"},
+            {"field": "region", "source": "image", "media_index": 2, "text": "Jakarta"},
+            {"field": "tech_relevant", "source": "image", "media_index": 2, "text": "Cloud Study Jam"},
+            {"field": "jabodetabek_relevant", "source": "image", "media_index": 2, "text": "Jakarta"}
+          ]
+        },
+        {
+          "candidate_index": 2,
+          "event_name": "Data Community Night",
+          "start_date": "2026-10-04",
+          "end_date": null,
+          "start_time": null,
+          "end_time": null,
+          "timezone": "Asia/Jakarta",
+          "format": "offline",
+          "venue": "Venue B",
+          "city_area": "Tangerang",
+          "region": "Banten",
+          "organizer": null,
+          "price_text": null,
+          "registration_url": null,
+          "deadline": null,
+          "tech_relevant": true,
+          "jabodetabek_relevant": true,
+          "publication_readiness": "ready",
+          "evidence": [
+            {"field": "event_name", "source": "image", "media_index": 4, "text": "Data Community Night"},
+            {"field": "start_date", "source": "image", "media_index": 4, "text": "4 October 2026"},
+            {"field": "format", "source": "image", "media_index": 4, "text": "Venue B, Tangerang"},
+            {"field": "venue", "source": "image", "media_index": 4, "text": "Venue B"},
+            {"field": "city_area", "source": "image", "media_index": 4, "text": "Tangerang"},
+            {"field": "region", "source": "image", "media_index": 4, "text": "Banten"},
+            {"field": "tech_relevant", "source": "image", "media_index": 4, "text": "Data Community Night"},
+            {"field": "jabodetabek_relevant", "source": "image", "media_index": 4, "text": "Tangerang"}
+          ]
+        }
+      ],
+      "warnings": []
+    }
+  },
+  {
+    "fixture_id": "non-event-post",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "source_post_id": "fixture-non-event-001",
+      "classification": "non_event",
+      "candidates": [],
+      "warnings": []
+    }
+  }
+]

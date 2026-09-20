@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infotech-jakarta.local/schemas/raw-post-result-v1.json",
+  "title": "RawPostResult v1",
+  "type": "object",
+  "required": ["schema_version", "status", "provider", "retrieved_at"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "status": { "enum": ["success", "incomplete", "error"] },
+    "provider": { "type": "string", "minLength": 1 },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "raw_post": { "$ref": "#/$defs/rawPost" },
+    "failure": { "$ref": "#/$defs/failure" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "success" } } },
+      "then": {
+        "required": ["raw_post"],
+        "properties": { "raw_post": { "$ref": "#/$defs/completeRawPost" } },
+        "not": { "required": ["failure"] }
+      }
+    },
+    {
+      "if": { "properties": { "status": { "const": "incomplete" } } },
+      "then": { "required": ["raw_post", "failure"] }
+    },
+    {
+      "if": { "properties": { "status": { "const": "error" } } },
+      "then": {
+        "required": ["failure"],
+        "not": { "required": ["raw_post"] }
+      }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "media": {
+      "type": "object",
+      "required": ["position", "media_type", "source_url"],
+      "properties": {
+        "position": { "type": "integer", "minimum": 1 },
+        "media_type": { "enum": ["image", "video"] },
+        "source_url": { "type": "string", "format": "uri" },
+        "width": { "type": ["integer", "null"], "minimum": 1 },
+        "height": { "type": ["integer", "null"], "minimum": 1 },
+        "checksum_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "storage_uri": { "type": ["string", "null"] },
+        "download_status": { "enum": ["pending", "downloaded", "failed"] },
+        "alt_text": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "rawPost": {
+      "type": "object",
+      "required": ["provider_external_id", "source_handle", "permalink", "posted_at", "caption", "post_type", "media", "provider_raw_payload"],
+      "properties": {
+        "provider_external_id": { "type": "string", "minLength": 1 },
+        "source_handle": { "type": "string", "minLength": 1 },
+        "permalink": { "type": "string", "format": "uri" },
+        "posted_at": { "type": "string", "format": "date-time" },
+        "caption": { "type": ["string", "null"] },
+        "post_type": { "enum": ["image", "carousel", "video"] },
+        "media": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/media" }
+        },
+        "provider_raw_payload": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "completeRawPost": {
+      "allOf": [
+        { "$ref": "#/$defs/rawPost" },
+        { "properties": { "media": { "minItems": 1 } } }
+      ]
+    },
+    "failure": {
+      "type": "object",
+      "required": ["code", "retryable", "message"],
+      "properties": {
+        "code": {
+          "enum": [
+            "MISSING_CHILD_MEDIA",
+            "PRIVATE_POST",
+            "DELETED_OR_NOT_FOUND",
+            "PROVIDER_TIMEOUT",
+            "PROVIDER_RATE_LIMIT",
+            "PROVIDER_ERROR",
+            "INVALID_PAYLOAD"
+          ]
+        },
+        "retryable": { "type": "boolean" },
+        "message": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

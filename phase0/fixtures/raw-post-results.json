@@ -1,0 +1,152 @@
+[
+  {
+    "fixture_id": "apify-image-success",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "status": "success",
+      "provider": "apify/instagram-post-scraper",
+      "retrieved_at": "2026-09-21T00:27:23Z",
+      "raw_post": {
+        "provider_external_id": "3827438369497925843",
+        "source_handle": "awsugjkt",
+        "permalink": "https://www.instagram.com/p/DawsIh3D2Zd/",
+        "posted_at": "2026-07-14T05:00:08.000Z",
+        "caption": "AWS User Group Jakarta x Confluent — Monthly Meetup July 2026",
+        "post_type": "image",
+        "media": [
+          {
+            "position": 1,
+            "media_type": "image",
+            "source_url": "https://example.invalid/apify-fixture/aws-meetup.jpg",
+            "width": 1080,
+            "height": 1350,
+            "checksum_sha256": null,
+            "storage_uri": null,
+            "download_status": "pending",
+            "alt_text": null
+          }
+        ],
+        "provider_raw_payload": {
+          "shortCode": "DawsIh3D2Zd",
+          "type": "Image",
+          "ownerUsername": "awsugjkt"
+        }
+      }
+    }
+  },
+  {
+    "fixture_id": "apify-carousel-incomplete",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "status": "incomplete",
+      "provider": "apify/instagram-post-scraper",
+      "retrieved_at": "2026-09-21T00:27:23Z",
+      "raw_post": {
+        "provider_external_id": "DdaUT74mnqI",
+        "source_handle": "gdgjakarta",
+        "permalink": "https://www.instagram.com/p/DdaUT74mnqI/",
+        "posted_at": "2026-09-18T02:02:52.000Z",
+        "caption": "DevFest Jakarta 2026 is officially coming.",
+        "post_type": "carousel",
+        "media": [],
+        "provider_raw_payload": {
+          "shortCode": "DdaUT74mnqI",
+          "type": "Sidecar",
+          "ownerUsername": "gdgjakarta"
+        }
+      },
+      "failure": {
+        "code": "MISSING_CHILD_MEDIA",
+        "retryable": true,
+        "message": "Provider payload identified a Sidecar post but did not include child media."
+      }
+    }
+  },
+  {
+    "fixture_id": "apify-carousel-complete",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "status": "success",
+      "provider": "apify/instagram-scraper",
+      "retrieved_at": "2026-09-21T01:10:00Z",
+      "raw_post": {
+        "provider_external_id": "3988589750890691208",
+        "source_handle": "gdgjakarta",
+        "permalink": "https://www.instagram.com/p/DdaUT74mnqI/",
+        "posted_at": "2026-09-18T02:02:52.000Z",
+        "caption": "DevFest Jakarta 2026 is officially coming, and it is time to reunite!",
+        "post_type": "carousel",
+        "media": [
+          {"position": 1, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-01", "width": 1440, "height": 1800, "checksum_sha256": "b533c6a7405fd84bd9a3cdc219551b0272a085d5bef7481d6b80388204c65e2f", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-01.png", "download_status": "downloaded", "alt_text": "Photo by GDG Jakarta on September 17, 2026."},
+          {"position": 2, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-02", "width": 1440, "height": 1800, "checksum_sha256": "30ba81a23f7e7e3c678e7ce3353eb0f524fee9e2d44d4e5278972217c5792417", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-02.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 3, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-03", "width": 1440, "height": 1800, "checksum_sha256": "1f156cc9b1cb38a5b6f83da0f3900944fd330e5b0da0b62b0e0dda1b2c68bea7", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-03.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 4, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-04", "width": 1440, "height": 1800, "checksum_sha256": "89c8d931337bd9a7f0647ef02386252df03e851e1e1579f2e982dce069f9bc69", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-04.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 5, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-05", "width": 1440, "height": 1800, "checksum_sha256": "9d175690972da858b6283bf738544e839ae4c39985c39887929f577595bec554", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-05.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 6, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-06", "width": 1440, "height": 1800, "checksum_sha256": "f5a83713090b3307b6358d70caabebcb7937636da3de2f84cd55c3de8deba883", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-06.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 7, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-07", "width": 1440, "height": 1800, "checksum_sha256": "7189c99b8f4a714091e687a33e4c4f8f41e95dddd73be8d0d21258e9781b6ed8", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-07.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 8, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-08", "width": 1440, "height": 1800, "checksum_sha256": "b6d747f11ef01e5c45629f0393c59b6deb090ce9052dbd8c43bf97f00eeb935b", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-08.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 9, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-09", "width": 1440, "height": 1800, "checksum_sha256": "5c117465ad06c92f773646b2db62279ddb1e800b8038d7f00c418b4d49137d16", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-09.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 10, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-10", "width": 1440, "height": 1800, "checksum_sha256": "719e157e60eef3ed16e028fbdc6052c1f600052816670d9275b9d884a92ec0e3", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-10.png", "download_status": "downloaded", "alt_text": null},
+          {"position": 11, "media_type": "image", "source_url": "https://example.invalid/DdaUT74mnqI/slide-11", "width": 1440, "height": 1800, "checksum_sha256": "e3dc84ad33526c747a93ca81780000d2b4f41c9aa3803b709665b7b65dedc9b9", "storage_uri": "outputs/phase0/media/DdaUT74mnqI/slide-11.png", "download_status": "downloaded", "alt_text": null}
+        ],
+        "provider_raw_payload": {
+          "shortCode": "DdaUT74mnqI",
+          "type": "Sidecar",
+          "ownerUsername": "gdgjakarta",
+          "childCount": 11,
+          "sourceFixture": "outputs/phase0/Apify_Carousel_Spike_2026-09-21.json"
+        }
+      }
+    }
+  },
+  {
+    "fixture_id": "missing-caption-success",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "status": "success",
+      "provider": "synthetic-contract-fixture",
+      "retrieved_at": "2026-09-21T00:30:00Z",
+      "raw_post": {
+        "provider_external_id": "fixture-missing-caption-001",
+        "source_handle": "fixture_account",
+        "permalink": "https://www.instagram.com/p/FIXTURE001/",
+        "posted_at": "2026-09-20T00:00:00Z",
+        "caption": null,
+        "post_type": "image",
+        "media": [
+          {
+            "position": 1,
+            "media_type": "image",
+            "source_url": "https://example.invalid/fixture/missing-caption.jpg",
+            "width": null,
+            "height": null,
+            "checksum_sha256": null,
+            "storage_uri": null,
+            "download_status": "pending",
+            "alt_text": null
+          }
+        ],
+        "provider_raw_payload": {}
+      }
+    }
+  },
+  {
+    "fixture_id": "provider-rate-limit-error",
+    "expected_valid": true,
+    "result": {
+      "schema_version": "1.0.0",
+      "status": "error",
+      "provider": "synthetic-contract-fixture",
+      "retrieved_at": "2026-09-21T00:31:00Z",
+      "failure": {
+        "code": "PROVIDER_RATE_LIMIT",
+        "retryable": true,
+        "message": "Provider returned a retryable rate-limit response."
+      }
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "name": "jakarta-event-discovery",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test:phase0": "node --test phase0/tests/*.test.mjs",
+    "evaluate:fixtures": "node phase0/evaluation/run-evaluation.mjs"
+  }
+}

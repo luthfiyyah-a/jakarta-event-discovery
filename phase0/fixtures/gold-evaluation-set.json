@@ -1,0 +1,35 @@
+[
+  {
+    "record_id": "fixture-single-001",
+    "classification": "event",
+    "candidates": [{
+      "event_name": "AWS User Group Jakarta Monthly Meetup",
+      "start_date": "2026-07-25",
+      "venue": "Example Hall",
+      "format": "offline"
+    }]
+  },
+  {
+    "record_id": "3988589750890691208",
+    "classification": "event",
+    "candidates": [{
+      "event_name": "DevFest Jakarta 2026",
+      "start_date": null,
+      "venue": null,
+      "format": "unknown"
+    }]
+  },
+  {
+    "record_id": "fixture-multi-001",
+    "classification": "event",
+    "candidates": [
+      {"event_name": "Cloud Study Jam", "start_date": "2026-10-03", "venue": "Venue A", "format": "offline"},
+      {"event_name": "Data Community Night", "start_date": "2026-10-04", "venue": "Venue B", "format": "offline"}
+    ]
+  },
+  {
+    "record_id": "fixture-non-event-001",
+    "classification": "non_event",
+    "candidates": []
+  }
+]
