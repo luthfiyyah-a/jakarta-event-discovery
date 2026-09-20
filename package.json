@@ -7,6 +7,7 @@
   },
   "scripts": {
     "test:phase0": "node --test phase0/tests",
+    "validate:media-layout": "node phase0/validate-media-layout.mjs",
     "evaluate:fixtures": "node phase0/evaluation/run-evaluation.mjs"
   }
 }

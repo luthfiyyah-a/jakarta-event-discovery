@@ -47,24 +47,25 @@ Phase 0 is complete only when:
 - baseline metrics, cost, and failure categories have been documented and accepted; and
 - the product owner records an explicit `GO`, `CONDITIONAL GO`, or `NO-GO` decision.
 
-No numerical live-model acceptance threshold is currently approved. It must be recorded before the baseline is used for a go/no-go decision.
+The approved numerical acceptance thresholds and decision rule are recorded in the [Phase 0 quality gates](../phase0/quality-gates.md).
 
 ## Current decisions
 
 - The checked-in 50-post corpus is the Phase 0 source of truth.
 - Apify Free Plan is the selected retrieval provider for Phase 0 evidence gathered so far.
 - The active Apify cash budget is USD 0; no payment method, paid upgrade, or overage is authorized.
-- The live multimodal provider/model and its spending boundary are undecided.
+- The baseline model is Qwen3-VL-Flash, pinned to `qwen3-vl-flash-2026-01-22` in non-thinking mode for the Singapore/International region.
+- Multimodal output uses JSON Object mode followed by local contract validation; provider-side strict JSON Schema enforcement is not assumed.
+- The Qwen spending boundary and API access are not yet approved.
 - Caption-derived `caption_only` and `needs_review` labels are provisional, not visual ground truth.
 
 ## Open decisions
 
 The product owner must approve:
 
-- the live multimodal provider/model and maximum spend;
+- the Qwen maximum spend and API-key setup;
 - any additional provider-credit consumption;
 - whether Reel/video extraction enters scope;
-- numerical acceptance thresholds for the live baseline; and
 - the final Phase 0 go/no-go outcome.
 
 Measured progress and the next executable work are maintained in the [project tracker](project-tracker.md). Budget history and current authorization are separated in the [Phase 0 budget guardrail](../phase0/budget.md).

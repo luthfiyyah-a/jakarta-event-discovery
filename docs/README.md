@@ -14,6 +14,8 @@ All narrative project documentation is maintained as Markdown. Machine-readable 
 
 - [Corpus labeling policy](../phase0/corpus/labeling-policy.md)
 - [Phase 0 budget guardrail](../phase0/budget.md)
+- [Phase 0 quality gates](../phase0/quality-gates.md)
+- [Local visual-media layout](../phase0/media-layout.md)
 - [Qwen candidate notes](../phase0/qwen/README.md)
 - [Multimodal extraction prompt v1](../phase0/prompts/event-extraction-v1.md)
 
