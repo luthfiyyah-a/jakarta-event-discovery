@@ -14,14 +14,14 @@
 | P0-03 Define raw-post contract | Complete | `phase0/contracts/raw-post-result.schema.json` plus fixtures and tests. |
 | P0-04 Prove media completeness/idempotency | Partial | One 11-slide carousel passed. A local comparison harness now detects stable-ID, status/failure, media-count, order, type, and checksum drift. Live repeated-run evidence, additional carousel shapes, and Reel/video behavior remain. |
 | P0-05 Define extraction contract/prompt | Complete | Versioned schema and multimodal prompt are checked in. |
-| P0-06 Build evaluation harness | Partial | Deterministic fixture runner and tests pass; no live-model adapter exists. Fixture scores are not live quality evidence. |
+| P0-06 Build evaluation harness | Partial | Deterministic fixture runner and a provider-neutral adapter boundary pass fixture tests. No provider-specific live adapter exists. Fixture scores are not live quality evidence. |
 | P0-07 Run frozen-corpus baseline | Not started | Requires human-validated gold labels, complete visual inputs, an approved model/provider, acceptance thresholds, and a spending boundary. |
 | P0-08 Go/no-go review | Not started | Depends on P0-07 results and documented failure analysis. |
 
 ## Repository verification
 
 - Node.js requirement: version 20 or newer.
-- `npm run test:phase0`: 20/20 tests passed on Windows, including local retrieval-idempotency coverage.
+- `npm run test:phase0`: 27/27 tests passed on Windows, including local retrieval-idempotency and model-adapter boundary coverage.
 - Corpus validator: 50 posts, five accounts, and 35 candidates passed structural checks.
 - The checked-in 50-post corpus remains the source of truth.
 
@@ -57,9 +57,9 @@ The IDR 50,000 figure in [the budget document](../phase0/budget.md) is a histori
 ## Recommended next sequence
 
 1. Review all 50 posts visually and resolve provisional gold labels.
-2. Prepare a provider-neutral live-adapter boundary and metering/redaction tests against fixtures.
-3. Obtain approval before capturing live repeated-run retrieval evidence or consuming more provider credit.
-4. Obtain decisions for the multimodal model/provider, acceptance thresholds, and explicit maximum spend.
+2. Obtain approval before capturing live repeated-run retrieval evidence or consuming more provider credit.
+3. Obtain decisions for the multimodal model/provider, acceptance thresholds, and explicit maximum spend.
+4. Implement the selected provider-specific adapter behind the tested boundary.
 5. Run an approved metered 10-post dry run before any full-corpus evaluation.
 6. Run the frozen-corpus baseline, inspect failures, and record coverage, correctness, multi-event recall, latency, and cost.
 7. Hold the go/no-go review before creating production application scaffolding.

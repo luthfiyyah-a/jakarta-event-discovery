@@ -33,6 +33,10 @@ Run `powershell -NoProfile -ExecutionPolicy Bypass -File phase0/validate-corpus.
 
 `retrieval/compare-retrieval-runs.mjs` compares two contract-shaped retrieval results while ignoring retrieval timestamps and temporary source URLs. It reports drift in status, provider, stable post identity, media count/order/type/checksum, and failure classification. Its fixture-based tests prepare the local harness only; live repeated-run provider evidence remains outstanding.
 
+## Model adapter boundary
+
+`evaluation/model-adapter.mjs` builds extraction input only from complete, ordered retrieval results and runs an injected provider adapter. Its run record captures provider/model identity, duration, token usage, reported cost, output, and warnings without persisting the input or raw provider payload. Credential redaction is applied to adapter errors. The checked-in tests use a fake adapter only; no external model has been selected or called.
+
 ## Budget and authorization
 
 The historical Phase 0 planning ceiling is IDR 50,000, but it is not authorization to spend. The active Apify guardrail is Free Plan with a cash budget of USD 0, and no paid AI-model evaluation is approved. See [budget.md](budget.md) for the distinction between the planning envelope and current authorization.
