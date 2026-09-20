@@ -8,6 +8,7 @@
   "scripts": {
     "test:phase0": "node --test phase0/tests",
     "validate:media-layout": "node phase0/validate-media-layout.mjs",
+    "retrieve:apify": "node phase0/retrieval/apify-media-retrieval.mjs",
     "evaluate:fixtures": "node phase0/evaluation/run-evaluation.mjs"
   }
 }

@@ -51,6 +51,7 @@ Read AGENTS.md, docs/rfc-001-jakarta-event-discovery.md, docs/project-tracker.md
 ## Current blockers
 
 - Human visual review of all 50 posts is incomplete.
+- The Apify media runner is ready, but the local token and live corpus retrieval are incomplete.
 - Retrieval idempotency and representative media-completeness evidence are incomplete.
 - The live multimodal model/provider, acceptance thresholds, and spending boundary are undecided.
 

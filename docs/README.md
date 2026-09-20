@@ -16,6 +16,7 @@ All narrative project documentation is maintained as Markdown. Machine-readable 
 - [Phase 0 budget guardrail](../phase0/budget.md)
 - [Phase 0 quality gates](../phase0/quality-gates.md)
 - [Local visual-media layout](../phase0/media-layout.md)
+- [Apify media retrieval](../phase0/apify/README.md)
 - [Qwen candidate notes](../phase0/qwen/README.md)
 - [Multimodal extraction prompt v1](../phase0/prompts/event-extraction-v1.md)
 

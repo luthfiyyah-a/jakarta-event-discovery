@@ -33,6 +33,8 @@ Run `powershell -NoProfile -ExecutionPolicy Bypass -File phase0/validate-corpus.
 
 `retrieval/compare-retrieval-runs.mjs` compares two contract-shaped retrieval results while ignoring retrieval timestamps and temporary source URLs. It reports drift in status, provider, stable post identity, media count/order/type/checksum, and failure classification. Its fixture-based tests prepare the local harness only; live repeated-run provider evidence remains outstanding.
 
+`retrieval/apify-media-retrieval.mjs` performs explicitly authorized, charge-capped direct-permalink batches and downloads ordered images into ignored local storage. See [apify/README.md](apify/README.md) for token setup and the one-post smoke test.
+
 ## Model adapter boundary
 
 `evaluation/model-adapter.mjs` builds extraction input only from complete, ordered retrieval results and runs an injected provider adapter. Its run record captures provider/model identity, duration, token usage, reported cost, output, and warnings without persisting the input or raw provider payload. Credential redaction is applied to adapter errors. The checked-in tests use a fake adapter only; no external model has been called and no Qwen-specific adapter exists yet.

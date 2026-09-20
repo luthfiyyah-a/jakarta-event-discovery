@@ -12,7 +12,7 @@
 | P0-01 Freeze representative corpus | Partial | The repository contains 50 caption-inspected posts across five pilot accounts. All 35 candidate labels remain provisional: 25 `caption_only` and 10 `needs_review`. Local visual-media readiness is currently 0/50 posts. |
 | P0-02 Select retrieval provider | Complete for Phase 0 | Apify Free Plan selected; profile smoke test returned 10/10 posts and direct-permalink test returned 11/11 ordered carousel slides. Cash spend: USD 0. |
 | P0-03 Define raw-post contract | Complete | `phase0/contracts/raw-post-result.schema.json` plus fixtures and tests. |
-| P0-04 Prove media completeness/idempotency | Partial | One 11-slide carousel passed. A local comparison harness now detects stable-ID, status/failure, media-count, order, type, and checksum drift. Live repeated-run evidence, additional carousel shapes, and Reel/video behavior remain. |
+| P0-04 Prove media completeness/idempotency | Partial | One 11-slide carousel passed. Local comparison and guarded Apify media-retrieval runners are tested. Live corpus retrieval awaits local token configuration; repeated-run evidence, additional carousel shapes, and Reel/video behavior remain. |
 | P0-05 Define extraction contract/prompt | Complete | Versioned schema and multimodal prompt are checked in. |
 | P0-06 Build evaluation harness | Partial | Deterministic fixture runner and a provider-neutral adapter boundary pass fixture tests. No provider-specific live adapter exists. Fixture scores are not live quality evidence. |
 | P0-07 Run frozen-corpus baseline | Not started | Qwen3-VL-Flash and numerical quality gates are selected. Human-validated gold labels, complete visual inputs, API access, and a spending boundary remain. |
@@ -21,7 +21,7 @@
 ## Repository verification
 
 - Node.js requirement: version 20 or newer.
-- `npm run test:phase0`: 30/30 tests passed on Windows, including retrieval-idempotency, model-adapter boundary, and local media-layout coverage.
+- `npm run test:phase0`: 38/38 tests passed on Windows, including Apify input/result mapping, retrieval idempotency, model-adapter boundary, and local media-layout coverage.
 - Corpus validator: 50 posts, five accounts, and 35 candidates passed structural checks.
 - Media-layout validator: 0/50 post directories are currently present; source completeness remains unverified.
 - The checked-in 50-post corpus remains the source of truth.
@@ -41,7 +41,7 @@ Profile mode was sufficient for discovery metadata but did not return child medi
 
 - Apify Free Plan only; maximum cash budget USD 0.
 - No payment method, paid upgrade, or overage without a new explicit decision.
-- Ask before consuming more provider credit.
+- Provider-credit use for corpus media retrieval was approved on 2026-09-21; stop if Free Plan credit is insufficient.
 - Qwen3-VL-Flash is approved for the baseline; API access and the maximum spend are undecided.
 - Human approval remains required before publishing any event.
 - Production application scaffolding remains out of scope.
@@ -51,23 +51,23 @@ The IDR 50,000 figure in [the budget document](../phase0/budget.md) is a histori
 ## Current blockers
 
 1. All 50 posts still require human validation using caption plus all ordered visual media.
-2. Complete visual inputs are not committed and must be made available safely for review/evaluation.
+2. Complete visual inputs are not committed; the guarded retrieval runner is ready, but the Apify token is not yet configured locally.
 3. Retrieval idempotency and representative media-completeness evidence are incomplete.
 4. Qwen API access and the maximum spend need product-owner action/approval.
 
 ## Recommended next sequence
 
 1. Review all 50 posts visually and resolve provisional gold labels.
-2. Obtain approval before capturing live repeated-run retrieval evidence or consuming more provider credit.
-3. Confirm the Qwen Singapore account/API key and explicit maximum spend.
-4. Implement the Qwen-specific adapter behind the tested boundary.
-5. Run an approved metered 10-post dry run before any full-corpus evaluation.
-6. Run the frozen-corpus baseline, inspect failures, and record coverage, correctness, multi-event recall, latency, and cost.
-7. Hold the go/no-go review before creating production application scaffolding.
+2. Configure the project-specific Apify token locally, then retrieve and verify one smoke-test post.
+3. Retrieve the remaining image/carousel media in guarded batches within Free Plan credit.
+4. Confirm the Qwen Singapore account/API key and explicit maximum spend.
+5. Implement the Qwen-specific adapter behind the tested boundary.
+6. Run an approved metered 10-post dry run before any full-corpus evaluation.
+7. Run the frozen-corpus baseline, inspect failures, and hold the go/no-go review before production scaffolding.
 
 ## Decisions requiring the product owner
 
-- Approval of additional provider-credit use.
+- Local setup of the existing project-specific Apify token.
 - Qwen API-key setup and maximum spend.
 - Whether Reel/video extraction enters scope.
 - The final `GO`, `CONDITIONAL GO`, or `NO-GO` decision.
