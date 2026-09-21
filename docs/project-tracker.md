@@ -62,8 +62,8 @@ The IDR 50,000 figure in [the budget document](../phase0/budget.md) is a histori
 2. Decide whether and how the two mixed image/video carousels enter Phase 0 scope.
 3. Capture live repeated-run idempotency evidence without replacing the frozen corpus.
 4. Confirm the Qwen Singapore API key and explicit maximum spend.
-5. Add the bounded dry-run orchestration around the tested adapter without making a live call.
-6. Run an approved metered 10-post dry run before any full-corpus evaluation.
+5. Review the generated Qwen input plan locally; the safe runner makes no provider call by default.
+6. Approve and enable a metered 10-post dry run before any full-corpus evaluation.
 7. Run the frozen-corpus baseline, inspect failures, and hold the go/no-go review before production scaffolding.
 
 ## Decisions requiring the product owner

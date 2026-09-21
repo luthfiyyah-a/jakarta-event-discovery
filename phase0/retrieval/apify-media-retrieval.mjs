@@ -83,7 +83,7 @@ export function matchPostsToResults(posts, items) {
   });
 }
 
-function parseCsv(text) {
+export function parseCsv(text) {
   const rows = [];
   let row = [];
   let field = "";

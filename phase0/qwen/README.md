@@ -34,6 +34,10 @@ For multimodal input, use JSON Object mode and validate the parsed result locall
 
 Tests inject a fake HTTP transport. No live Qwen request has been made.
 
+## Safe runner behavior
+
+`npm run plan:qwen -- --max-posts 2` validates local manifests and prints a bounded plan without contacting Qwen. The runner caps selections at 10 posts. Its live branch remains deliberately disabled until the product owner approves a metered batch and a cost-accounting method; setting a key or passing `--execute` alone cannot trigger a paid call.
+
 ## Evaluation sequence
 
 1. Confirm the Singapore-region account, available free quota, and an explicit maximum spend.
