@@ -10,7 +10,7 @@ The corpus currently contains 50 caption-inspected posts across all five pilot a
 - 8 from `indonesiadesignresearch`
 - 6 from `lifeatblibli`
 
-The [RFC-001](../docs/rfc-001-jakarta-event-discovery.md) corpus-size gate of 50 real posts from at least three target accounts is met. All five pilot accounts are represented. This satisfies the sample-size prerequisite only; the labels are not yet human-validated from all ordered visual media, and the provider-completeness, extraction-quality, latency, failure-mode, and cost gates remain open.
+The [RFC-001](../docs/rfc-001-jakarta-event-discovery.md) corpus-size gate of 50 real posts from at least three target accounts is met. All five pilot accounts are represented. Ordered image media is locally present for 48 posts. `LIF-001` and `LIF-005` each contain one video slide and remain incomplete under the image-only scope. This satisfies the sample-size prerequisite only; the labels are not yet human-validated from all ordered visual media, and the provider-completeness, extraction-quality, latency, failure-mode, and cost gates remain open.
 
 The sampling pool contains the original 30 top-grid permalinks plus three additional image/carousel posts selected on 26 August 2026 to close the RFC sample-size gate. All 26 image/carousel entries in the pool have been caption-inspected and admitted to the corpus. Seven Reels are retained as observed source data but are excluded from the default image/carousel corpus until the product scope explicitly includes video extraction.
 
@@ -33,7 +33,7 @@ Run `powershell -NoProfile -ExecutionPolicy Bypass -File phase0/validate-corpus.
 
 `retrieval/compare-retrieval-runs.mjs` compares two contract-shaped retrieval results while ignoring retrieval timestamps and temporary source URLs. It reports drift in status, provider, stable post identity, media count/order/type/checksum, and failure classification. Its fixture-based tests prepare the local harness only; live repeated-run provider evidence remains outstanding.
 
-`retrieval/apify-media-retrieval.mjs` performs explicitly authorized, charge-capped direct-permalink batches and downloads ordered images into ignored local storage. See [apify/README.md](apify/README.md) for token setup and the one-post smoke test.
+`retrieval/apify-media-retrieval.mjs` performs explicitly authorized, charge-capped direct-permalink batches and downloads ordered images into ignored local storage. It retrieved all 50 corpus records and completed local image media for 48 posts; mixed image/video carousels are reported as incomplete. See [apify/README.md](apify/README.md) for token setup, safeguards, and local-dataset recovery.
 
 ## Model adapter boundary
 

@@ -51,9 +51,9 @@ Read AGENTS.md, docs/rfc-001-jakarta-event-discovery.md, docs/project-tracker.md
 ## Current blockers
 
 - Human visual review of all 50 posts is incomplete.
-- The Apify media runner is ready, but the local token and live corpus retrieval are incomplete.
-- Retrieval idempotency and representative media-completeness evidence are incomplete.
-- The live multimodal model/provider, acceptance thresholds, and spending boundary are undecided.
+- Ordered image media is locally present for 48/50 posts but remains ignored by Git; `LIF-001` and `LIF-005` each contain a video slide and are incomplete under the image-only scope.
+- Live repeated-run idempotency evidence is incomplete.
+- Qwen3-VL-Flash and the acceptance thresholds are selected; API access and the spending boundary remain undecided, and no live model call has been made.
 
 Useful local work that does not require spending includes documentation maintenance, fixture-based adapter design, redaction/metering tests, idempotency tests, and evaluation-runner hardening. Do not describe fixture scores as live-model quality evidence.
 

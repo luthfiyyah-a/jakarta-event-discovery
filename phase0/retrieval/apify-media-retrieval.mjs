@@ -182,19 +182,39 @@ function extensionFor(contentType) {
   throw new ApifyRetrievalError("UNSUPPORTED_MEDIA_TYPE", `Unsupported downloaded content type: ${contentType || "missing"}`);
 }
 
-async function downloadImage(sourceUrl) {
-  const response = await fetch(sourceUrl);
-  if (!response.ok) {
-    throw new ApifyRetrievalError("MEDIA_DOWNLOAD_FAILED", `Media download returned HTTP ${response.status}`);
+export async function downloadImage(sourceUrl, fetchImpl = fetch) {
+  let lastError;
+  const urls = [sourceUrl];
+  const parsed = new URL(sourceUrl);
+  if ((parsed.hostname.endsWith(".fbcdn.net") || parsed.hostname.endsWith(".cdninstagram.com"))
+      && parsed.hostname !== "scontent.cdninstagram.com") {
+    parsed.hostname = "scontent.cdninstagram.com";
+    urls.push(parsed.toString());
   }
-  const contentType = response.headers.get("content-type") ?? "";
-  const extension = extensionFor(contentType);
-  const bytes = Buffer.from(await response.arrayBuffer());
-  return {
-    bytes,
-    extension,
-    checksum_sha256: crypto.createHash("sha256").update(bytes).digest("hex"),
-  };
+
+  for (const candidateUrl of urls) {
+    for (let attempt = 1; attempt <= 3; attempt += 1) {
+      try {
+        const response = await fetchImpl(candidateUrl);
+        if (!response.ok) {
+          throw new ApifyRetrievalError("MEDIA_DOWNLOAD_FAILED", `Media download returned HTTP ${response.status}`);
+        }
+        const contentType = response.headers.get("content-type") ?? "";
+        const extension = extensionFor(contentType);
+        const bytes = Buffer.from(await response.arrayBuffer());
+        return {
+          bytes,
+          extension,
+          checksum_sha256: crypto.createHash("sha256").update(bytes).digest("hex"),
+        };
+      } catch (error) {
+        lastError = error;
+        if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 500));
+      }
+    }
+  }
+  if (lastError instanceof ApifyRetrievalError) throw lastError;
+  throw new ApifyRetrievalError("MEDIA_DOWNLOAD_FAILED", "Media download failed after three attempts");
 }
 
 async function savePostMedia(mediaRoot, rawRoot, post, result) {
@@ -255,29 +275,41 @@ export async function retrieveApifyMedia({ posts, token, mediaRoot, rawRoot, cha
   await fs.mkdir(rawRoot, { recursive: true });
   await fs.writeFile(path.join(rawRoot, `apify-run-${run.id}.json`), `${JSON.stringify(items, null, 2)}\n`);
 
-  const matched = matchPostsToResults(posts, items);
-  const downloaded = [];
-  for (const pair of matched) {
-    downloaded.push(await savePostMedia(mediaRoot, rawRoot, pair.post, pair.result));
-  }
+  const retrieval = await retrieveMediaFromItems({ posts, items, mediaRoot, rawRoot });
   return {
     actor: "apify/instagram-scraper",
     run_id: run.id,
     run_status: run.status,
     charge_cap_usd: chargeCapUsd,
     usage_total_usd: run.usageTotalUsd ?? null,
-    downloaded,
+    ...retrieval,
   };
 }
 
+export async function retrieveMediaFromItems({ posts, items, mediaRoot, rawRoot }) {
+  const downloaded = [];
+  const failures = [];
+  for (const post of posts) {
+    try {
+      const [pair] = matchPostsToResults([post], items);
+      downloaded.push(await savePostMedia(mediaRoot, rawRoot, pair.post, pair.result));
+    } catch (error) {
+      if (!(error instanceof ApifyRetrievalError)) throw error;
+      failures.push({ post_id: post.post_id, code: error.code });
+    }
+  }
+  return { downloaded, failures };
+}
+
 function parseArguments(args) {
-  const options = { execute: false, postIds: [], maxPosts: null, chargeCapUsd: maximumChargeUsd };
+  const options = { execute: false, postIds: [], maxPosts: null, chargeCapUsd: maximumChargeUsd, datasetFile: null };
   for (let index = 0; index < args.length; index += 1) {
     const argument = args[index];
     if (argument === "--execute") options.execute = true;
     else if (argument === "--post-id") options.postIds.push(args[++index]);
     else if (argument === "--max-posts") options.maxPosts = Number(args[++index]);
     else if (argument === "--max-charge-usd") options.chargeCapUsd = Number(args[++index]);
+    else if (argument === "--dataset-file") options.datasetFile = args[++index];
     else throw new TypeError(`Unknown argument: ${argument}`);
   }
   return options;
@@ -317,18 +349,28 @@ async function main() {
     throw new TypeError(`Select posts with --post-id or --max-posts between 1 and ${maximumBatchSize}`);
   }
 
-  const token = process.env.INSTAGRAM_PROVIDER_API_KEY ?? process.env.APIFY_TOKEN ?? process.env.APIFY_API_TOKEN;
-  if (!token) {
-    throw new TypeError("Set INSTAGRAM_PROVIDER_API_KEY in the environment or ignored .env file");
+  const mediaRoot = path.join(root, "phase0/media");
+  const rawRoot = path.join(root, "phase0/raw");
+  let report;
+  if (options.datasetFile) {
+    const items = JSON.parse(await fs.readFile(path.resolve(root, options.datasetFile), "utf8"));
+    const retrieval = await retrieveMediaFromItems({ posts, items, mediaRoot, rawRoot });
+    report = { source: "local_dataset", provider_credit_used: false, ...retrieval };
+  } else {
+    const token = process.env.INSTAGRAM_PROVIDER_API_KEY ?? process.env.APIFY_TOKEN ?? process.env.APIFY_API_TOKEN;
+    if (!token) {
+      throw new TypeError("Set INSTAGRAM_PROVIDER_API_KEY in the environment or ignored .env file");
+    }
+    report = await retrieveApifyMedia({
+      posts,
+      token,
+      chargeCapUsd: options.chargeCapUsd,
+      mediaRoot,
+      rawRoot,
+    });
   }
-  const report = await retrieveApifyMedia({
-    posts,
-    token,
-    chargeCapUsd: options.chargeCapUsd,
-    mediaRoot: path.join(root, "phase0/media"),
-    rawRoot: path.join(root, "phase0/raw"),
-  });
   console.log(JSON.stringify(report, null, 2));
+  if (report.failures.length > 0) process.exitCode = 2;
 }
 
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {

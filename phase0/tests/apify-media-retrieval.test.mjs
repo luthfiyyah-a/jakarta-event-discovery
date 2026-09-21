@@ -1,12 +1,16 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
+import os from "node:os";
+import path from "node:path";
 import test from "node:test";
 import {
   ApifyRetrievalError,
   buildActorInput,
+  downloadImage,
   extractOrderedMedia,
   matchPostsToResults,
   parseCorpusPosts,
+  retrieveMediaFromItems,
 } from "../retrieval/apify-media-retrieval.mjs";
 
 const corpusText = await fs.readFile(new URL("../corpus/pilot-posts.csv", import.meta.url), "utf8");
@@ -83,4 +87,79 @@ test("dataset matching fails when an input post is absent", () => {
 
 test("actor input refuses batches above the safety limit", () => {
   assert.throws(() => buildActorInput(posts.slice(0, 11)), /between 1 and 10/);
+});
+
+test("media download retries transient fetch failures", async () => {
+  let attempts = 0;
+  const result = await downloadImage("https://example.invalid/image", async () => {
+    attempts += 1;
+    if (attempts < 3) throw new Error("temporary DNS failure");
+    return {
+      ok: true,
+      headers: { get: () => "image/jpeg" },
+      arrayBuffer: async () => Buffer.from("image-bytes"),
+    };
+  });
+
+  assert.equal(attempts, 3);
+  assert.equal(result.extension, "jpg");
+  assert.match(result.checksum_sha256, /^[a-f0-9]{64}$/);
+});
+
+test("media download redacts the underlying network error after retry exhaustion", async () => {
+  await assert.rejects(
+    downloadImage("https://temporary-cdn.invalid/sensitive-query", async () => {
+      throw new Error("network failed for a temporary URL");
+    }),
+    (error) => error instanceof ApifyRetrievalError
+      && error.code === "MEDIA_DOWNLOAD_FAILED"
+      && error.message === "Media download failed after three attempts",
+  );
+});
+
+test("media download falls back to the canonical Instagram CDN host", async () => {
+  const seenHosts = [];
+  const result = await downloadImage(
+    "https://instagram.example.fna.fbcdn.net/media.jpg?signed=value",
+    async (url) => {
+      const hostname = new URL(url).hostname;
+      seenHosts.push(hostname);
+      if (hostname !== "scontent.cdninstagram.com") throw new Error("regional DNS unavailable");
+      return {
+        ok: true,
+        headers: { get: () => "image/jpeg" },
+        arrayBuffer: async () => Buffer.from("fallback-image"),
+      };
+    },
+  );
+
+  assert.deepEqual(seenHosts, [
+    "instagram.example.fna.fbcdn.net",
+    "instagram.example.fna.fbcdn.net",
+    "instagram.example.fna.fbcdn.net",
+    "scontent.cdninstagram.com",
+  ]);
+  assert.equal(result.extension, "jpg");
+});
+
+test("local retrieval reports an out-of-scope video and continues the batch", async (context) => {
+  const temporaryRoot = await fs.mkdtemp(path.join(os.tmpdir(), "phase0-apify-test-"));
+  context.after(() => fs.rm(temporaryRoot, { recursive: true, force: true }));
+
+  const result = await retrieveMediaFromItems({
+    posts: posts.slice(0, 2),
+    items: [
+      { shortCode: posts[0].shortcode, type: "Video", videoUrl: "https://example.invalid/video.mp4" },
+    ],
+    mediaRoot: path.join(temporaryRoot, "media"),
+    rawRoot: path.join(temporaryRoot, "raw"),
+  });
+
+  assert.deepEqual(result, {
+    downloaded: [],
+    failures: [
+      { post_id: "AWS-001", code: "VIDEO_OUT_OF_SCOPE" },
+      { post_id: "AWS-002", code: "POST_RESULT_MISSING" },
+    ],
+  });
 });
