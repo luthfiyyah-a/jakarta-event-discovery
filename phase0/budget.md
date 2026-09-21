@@ -15,7 +15,9 @@
 | Six frozen-corpus direct-permalink runs | USD 0.135 | USD 0 |
 | **Total documented Apify usage** | **USD 0.155** | **USD 0** |
 
-The corpus runs returned 50/50 dataset results. Forty-eight image-only posts were downloaded locally; two mixed image/video carousels remain incomplete under the current scope.
+The corpus runs returned 50/50 dataset results. Forty-eight in-scope image-only posts were downloaded locally; two mixed image/video carousels are excluded from the current scope.
+
+Qwen's Singapore free quota is conditional on account eligibility and expiry. It must be verified in the Model Studio console and configured to stop when the quota is exhausted; “free quota available” is not authorization for paid overage.
 
 ## Historical planning envelope
 

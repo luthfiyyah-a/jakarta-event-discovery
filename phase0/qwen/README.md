@@ -17,6 +17,7 @@ Official references:
 - [Structured output](https://www.alibabacloud.com/help/en/model-studio/qwen-structured-output)
 - [Qwen vision OpenAI-compatible API](https://www.alibabacloud.com/help/en/model-studio/qwen-vl-compatible-with-openai)
 - [Regions and endpoints](https://www.alibabacloud.com/help/en/model-studio/regions)
+- [New-user free quota](https://www.alibabacloud.com/help/en/model-studio/new-free-quota)
 
 For multimodal input, use JSON Object mode and validate the parsed result locally. Do not assume provider-side strict JSON Schema enforcement for image requests.
 
@@ -57,3 +58,5 @@ Tests inject a fake HTTP transport. No live Qwen request has been made.
 - Rotate or revoke the pilot key after Phase 0.
 
 No API call, provider-credit consumption, payment method, or paid usage is authorized merely by this model selection. Those actions still require the product owner's explicit spending approval.
+
+The selected Singapore `qwen3-vl-flash` model may have a 1-million-token free quota for eligible accounts, but this is not guaranteed for every account and is time-limited. Verify the quota and expiry in the Model Studio console, enable the setting that stops calls when free quota is exhausted, and keep the project cash authorization at USD 0 unless the product owner explicitly changes it. After quota exhaustion or expiry, normal token pricing applies.

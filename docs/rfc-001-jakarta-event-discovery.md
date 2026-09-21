@@ -56,6 +56,7 @@ The approved numerical acceptance thresholds and decision rule are recorded in t
 - The active Apify cash budget is USD 0; no payment method, paid upgrade, or overage is authorized.
 - The baseline model is Qwen3-VL-Flash, pinned to `qwen3-vl-flash-2026-01-22` in non-thinking mode for the Singapore/International region.
 - Multimodal output uses JSON Object mode followed by local contract validation; provider-side strict JSON Schema enforcement is not assumed.
+- Reel/video extraction, including mixed carousel video children, is excluded from the current Phase 0 scope.
 - The Qwen spending boundary and API access are not yet approved.
 - Caption-derived `caption_only` and `needs_review` labels are provisional, not visual ground truth.
 
@@ -65,7 +66,6 @@ The product owner must approve:
 
 - the Qwen maximum spend and API-key setup;
 - any additional provider-credit consumption;
-- whether Reel/video extraction enters scope;
 - the final Phase 0 go/no-go outcome.
 
 Measured progress and the next executable work are maintained in the [project tracker](project-tracker.md). Budget history and current authorization are separated in the [Phase 0 budget guardrail](../phase0/budget.md).

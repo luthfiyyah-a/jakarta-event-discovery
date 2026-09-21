@@ -9,10 +9,10 @@
 
 | Work item | Status | Evidence / remaining work |
 |---|---|---|
-| P0-01 Freeze representative corpus | Partial | The repository contains 50 caption-inspected posts across five pilot accounts. All 35 candidate labels remain provisional: 25 `caption_only` and 10 `needs_review`. Ordered image media is locally present for 48/50 posts; `LIF-001` and `LIF-005` each contain a video slide and remain incomplete under the image-only scope. |
+| P0-01 Freeze representative corpus | Partial | The repository contains 50 caption-inspected posts across five pilot accounts. All 35 candidate labels remain provisional: 25 `caption_only` and 10 `needs_review`. Ordered image media is locally present for all 48 in-scope image-only posts; `LIF-001` and `LIF-005` are explicitly excluded because each contains a video slide. |
 | P0-02 Select retrieval provider | Complete for Phase 0 | Apify Free Plan selected; profile smoke test returned 10/10 posts and direct-permalink test returned 11/11 ordered carousel slides. Cash spend: USD 0. |
 | P0-03 Define raw-post contract | Complete | `phase0/contracts/raw-post-result.schema.json` plus fixtures and tests. |
-| P0-04 Prove media completeness/idempotency | Partial | Direct-permalink retrieval returned a result for all 50 corpus posts. The guarded runner downloaded 48 image-only posts, preserves ordered carousels, resumes from local datasets, retries CDN failures, and continues after per-post failures. Live repeated-run evidence and handling of the two mixed image/video carousels remain. |
+| P0-04 Prove media completeness/idempotency | Partial | Direct-permalink retrieval returned a result for all 50 corpus posts. The guarded runner downloaded all 48 in-scope image-only posts, preserves ordered carousels, resumes from local datasets, retries CDN failures, and continues after per-post failures. Live repeated-run evidence remains. The two mixed image/video carousels are out of scope by product decision. |
 | P0-05 Define extraction contract/prompt | Complete | Versioned schema and multimodal prompt are checked in. |
 | P0-06 Build evaluation harness | Partial | Deterministic fixture runner, provider-neutral boundary, and Qwen-specific adapter pass fake-transport tests. No live model call has been made. Fixture scores are not live quality evidence. |
 | P0-07 Run frozen-corpus baseline | Not started | Qwen3-VL-Flash and numerical quality gates are selected. Human-validated gold labels, complete visual inputs, API access, and a spending boundary remain. |
@@ -23,7 +23,7 @@
 - Node.js requirement: version 20 or newer.
 - `npm run test:phase0`: 51/51 tests passed on Windows, including guarded Apify retrieval, retrieval idempotency, the Qwen fake-transport adapter, model-adapter boundary, and local media-layout coverage.
 - Corpus validator: 50 posts, five accounts, and 35 candidates passed structural checks.
-- Media-layout validator: 48/50 post directories are structurally valid. `LIF-001` and `LIF-005` are deliberately missing because each requires a video slide; source completeness still needs human confirmation.
+- Media-layout validator: 48/50 corpus directories are structurally valid, representing 48/48 in-scope image-only posts. `LIF-001` and `LIF-005` are deliberately excluded because each requires a video slide; source completeness still needs human confirmation for the in-scope set.
 - The checked-in 50-post corpus remains the source of truth.
 
 These checks verify repository mechanics and internal consistency. They do not validate the provisional labels or live-model quality.
@@ -52,24 +52,22 @@ The IDR 50,000 figure in [the budget document](../phase0/budget.md) is a histori
 ## Current blockers
 
 1. All 50 posts still require human validation using caption plus all ordered visual media.
-2. `LIF-001` and `LIF-005` require a decision on mixed-carousel video handling before their visual inputs can be complete.
-3. Live repeated-run idempotency evidence is incomplete.
-4. Qwen API access and the maximum spend need product-owner action/approval before a live call.
+2. Live repeated-run idempotency evidence is incomplete.
+3. Qwen account free-quota eligibility, quota stop behavior, and maximum spend need product-owner verification before a live call.
 
 ## Recommended next sequence
 
 1. Review the 48 locally complete image posts and resolve their provisional gold labels.
-2. Decide whether and how the two mixed image/video carousels enter Phase 0 scope.
-3. Capture live repeated-run idempotency evidence without replacing the frozen corpus.
-4. Confirm the Qwen Singapore API key and explicit maximum spend.
-5. Review the generated Qwen input plan locally; the safe runner makes no provider call by default.
-6. Approve and enable a metered 10-post dry run before any full-corpus evaluation.
-7. Run the frozen-corpus baseline, inspect failures, and hold the go/no-go review before production scaffolding.
+2. Capture live repeated-run idempotency evidence without replacing the frozen corpus.
+3. Verify Qwen Singapore free quota, enable stop-on-quota exhaustion, and set a maximum spend of USD 0 unless explicitly changed.
+4. Review the generated Qwen input plan locally; the safe runner makes no provider call by default.
+5. Approve and enable a metered 10-post dry run before any full-corpus evaluation.
+6. Run the frozen-corpus baseline, inspect failures, and hold the go/no-go review before production scaffolding.
 
 ## Decisions requiring the product owner
 
 - Qwen API-key setup and maximum spend.
-- Whether mixed-carousel video and/or Reel extraction enters scope.
+- Whether the current Qwen free quota is available for this account and its expiry date.
 - The final `GO`, `CONDITIONAL GO`, or `NO-GO` decision.
 
 ## Exit criteria for Phase 0
