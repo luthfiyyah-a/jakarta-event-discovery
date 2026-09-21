@@ -37,7 +37,7 @@ Run `powershell -NoProfile -ExecutionPolicy Bypass -File phase0/validate-corpus.
 
 ## Model adapter boundary
 
-`evaluation/model-adapter.mjs` builds extraction input only from complete, ordered retrieval results and runs an injected provider adapter. Its run record captures provider/model identity, duration, token usage, reported cost, output, and warnings without persisting the input or raw provider payload. Credential redaction is applied to adapter errors. The checked-in tests use a fake adapter only; no external model has been called and no Qwen-specific adapter exists yet.
+`evaluation/model-adapter.mjs` builds extraction input only from complete, ordered retrieval results and runs an injected provider adapter. Its run record captures provider/model identity, duration, token usage, reported cost, output, and warnings without persisting the input or raw provider payload. Credential redaction is applied to adapter errors. `evaluation/qwen-adapter.mjs` implements the pinned Singapore Qwen configuration, local-image encoding, JSON parsing/validation, and a maximum of one output retry. All checked-in tests use fake transports; no external model has been called.
 
 The approved baseline model and numerical thresholds are documented in [qwen/README.md](qwen/README.md) and [quality-gates.md](quality-gates.md). Original visual files must follow [media-layout.md](media-layout.md) and remain local-only.
 

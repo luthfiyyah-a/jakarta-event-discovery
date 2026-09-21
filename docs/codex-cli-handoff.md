@@ -37,6 +37,7 @@ Read AGENTS.md, docs/rfc-001-jakarta-event-discovery.md, docs/project-tracker.md
 - Provider-neutral raw-post and event-extraction JSON Schemas.
 - Fixtures and contract tests.
 - A deterministic evaluation runner for fixture/self-test use.
+- A Qwen-specific multimodal adapter tested with a fake transport; it has not made a live model call.
 - A versioned multimodal extraction prompt.
 - Apify source-provider spike evidence and explicit zero-cash guardrails.
 - A cross-platform `npm run test:phase0` command.

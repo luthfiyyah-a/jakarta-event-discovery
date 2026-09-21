@@ -90,6 +90,14 @@ function normalizeReportedCost(cost) {
   };
 }
 
+function normalizeWarnings(warnings) {
+  if (warnings === null || warnings === undefined) return [];
+  if (!Array.isArray(warnings) || warnings.some((warning) => typeof warning !== "string" || warning.length === 0)) {
+    throw new TypeError("adapter response warnings must be an array of non-empty strings");
+  }
+  return [...warnings];
+}
+
 function defaultClock() {
   return {
     now: () => new Date(),
@@ -137,7 +145,7 @@ export async function runModelAdapter({ adapter, input, clock = defaultClock() }
 
   const usage = normalizeUsage(response.usage);
   const reportedCost = normalizeReportedCost(response.reported_cost);
-  const warnings = [];
+  const warnings = normalizeWarnings(response.warnings);
   if (!usage) warnings.push("USAGE_UNAVAILABLE");
   if (!reportedCost) warnings.push("REPORTED_COST_UNAVAILABLE");
 

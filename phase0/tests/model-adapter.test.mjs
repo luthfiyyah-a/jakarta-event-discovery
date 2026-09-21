@@ -92,6 +92,21 @@ test("runModelAdapter marks missing usage and cost", async () => {
   assert.deepEqual(record.warnings, ["USAGE_UNAVAILABLE", "REPORTED_COST_UNAVAILABLE"]);
 });
 
+test("runModelAdapter preserves adapter warnings", async () => {
+  const record = await runModelAdapter({
+    adapter: {
+      provider: "fixture-provider",
+      model: "fixture-model-v1",
+      async invoke() {
+        return { result: extractionResult, warnings: ["MODEL_OUTPUT_RETRY"] };
+      },
+    },
+    input: buildExtractionInput(completeCarousel),
+  });
+
+  assert.deepEqual(record.warnings, ["MODEL_OUTPUT_RETRY", "USAGE_UNAVAILABLE", "REPORTED_COST_UNAVAILABLE"]);
+});
+
 test("redactSensitive redacts credential keys and inline tokens without mutation", () => {
   const original = {
     authorization: "Bearer testtoken123",

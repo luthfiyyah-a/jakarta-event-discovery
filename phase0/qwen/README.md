@@ -13,11 +13,26 @@ The snapshot is pinned so the 10-post dry run and 50-post baseline use the same 
 
 Official references:
 
-- [Model pricing and regional availability](https://help.aliyun.com/en/model-studio/model-pricing)
-- [Structured output](https://help.aliyun.com/en/model-studio/qwen-structured-output)
-- [Singapore region and endpoints](https://help.aliyun.com/en/model-studio/singapore-regional-access-information)
+- [Model pricing and regional availability](https://www.alibabacloud.com/help/en/model-studio/model-pricing)
+- [Structured output](https://www.alibabacloud.com/help/en/model-studio/qwen-structured-output)
+- [Qwen vision OpenAI-compatible API](https://www.alibabacloud.com/help/en/model-studio/qwen-vl-compatible-with-openai)
+- [Regions and endpoints](https://www.alibabacloud.com/help/en/model-studio/regions)
 
 For multimodal input, use JSON Object mode and validate the parsed result locally. Do not assume provider-side strict JSON Schema enforcement for image requests.
+
+## Local adapter status
+
+`evaluation/qwen-adapter.mjs` implements the approved model behind the provider-neutral adapter boundary without adding an SDK dependency. It:
+
+- accepts only HTTPS Singapore Model Studio endpoints and the pinned model;
+- converts local JPEG, PNG, and WebP files to Base64 Data URLs;
+- preserves media order and labels every image with its one-based `media_index`;
+- fixes non-thinking and JSON Object modes in the request;
+- parses and locally validates the output, retrying invalid output at most once;
+- accumulates token usage across both attempts; and
+- rejects incomplete or video inputs before any provider request.
+
+Tests inject a fake HTTP transport. No live Qwen request has been made.
 
 ## Evaluation sequence
 
